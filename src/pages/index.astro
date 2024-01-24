@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import { Hoge } from '../components/Hoge.tsx';
+import Fuga from '../components/Fuga.svelte'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -40,7 +41,8 @@ import { Hoge } from '../components/Hoge.tsx';
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
 		<ul role="list" class="link-card-grid">
-			<Hoge />
+			<Hoge client:visible/>
+			<Fuga client:visible/>
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
