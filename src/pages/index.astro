@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import { Hoge } from '../components/Hoge.tsx';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -39,6 +40,7 @@ import Card from '../components/Card.astro';
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
 		<ul role="list" class="link-card-grid">
+			<Hoge />
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
