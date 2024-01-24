@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import { Hoge } from '../components/Hoge.tsx';
 import Fuga from '../components/Fuga.svelte'
+import Svg from '../components/svg/Svg.svelte';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -43,6 +44,7 @@ import Fuga from '../components/Fuga.svelte'
 		<ul role="list" class="link-card-grid">
 			<Hoge client:visible/>
 			<Fuga client:visible/>
+			<Svg client:visible/>
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
