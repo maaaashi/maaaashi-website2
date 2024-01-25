@@ -1,8 +1,8 @@
 <script>
 	import { quintOut } from 'svelte/easing';
 	import { fade, draw, fly } from 'svelte/transition';
-	import { expand } from './custom-transitions.js';
-	import { inner, outer } from './shape.js';
+	import { expand } from './custom-transitions.ts';
+	import { inner, outer } from './shape.ts';
 
 	let visible = true;
 </script>
@@ -20,7 +20,7 @@
 	</svg>
 
 	<div class="centered" out:fly={{ y: -20, duration: 800 }}>
-		{#each 'SVELTE' as char, i}
+		{#each 'MAAAASHI' as char, i}
 			<span in:fade|global={{ delay: 1000 + i * 150, duration: 800 }}>{char}</span>
 		{/each}
 	</div>
@@ -51,7 +51,7 @@
 	}
 
 	.centered {
-		font-size: 20vw;
+		font-size: 15vw;
 		position: absolute;
 		left: 50%;
 		top: 50%;
