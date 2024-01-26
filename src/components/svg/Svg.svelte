@@ -1,16 +1,20 @@
-<script>
+<script lang="ts">
 	import { quintOut } from 'svelte/easing';
 	import { fade, draw, fly } from 'svelte/transition';
 	import { expand } from './custom-transitions.ts';
 	import { inner, outer } from './shape.ts';
     import { onMount } from 'svelte'
 	let open = false;
+
 	onMount(() => {
+		console.log('mounted')
 		setTimeout(() => {
 			open = true
-		}, 50)
+		}, 2000)
 	})
 </script>
+
+{open}
 
 {#if open}
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 124">
