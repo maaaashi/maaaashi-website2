@@ -7,9 +7,9 @@ import Svg from '../components/svg/Svg.svelte';
 
 <Layout title="Maaaashi's Website" />
 <main>
-	<div class="w-40 mx-auto">
-		<Svg client:visible/>
-	</div>
 	<ReactComponent client:visible/>
 	<SvelteComponent client:visible/>
+	<div class="w-40 mx-auto">
+		<Svg client:load/>
+	</div>
 </main>
