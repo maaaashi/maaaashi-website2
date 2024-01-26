@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Hoge } from '../components/Hoge.tsx';
-import Fuga from '../components/Fuga.svelte'
+import { ReactComponent } from '../components/ReactComponent.tsx';
+import SvelteComponent from '../components/SvelteComponent.svelte.tsx'
 import Svg from '../components/svg/Svg.svelte';
 ---
 
@@ -10,8 +10,6 @@ import Svg from '../components/svg/Svg.svelte';
 	<div class="w-40 mx-auto">
 		<Svg client:visible/>
 	</div>
-	<ul role="list" class="link-card-grid">
-		<Hoge client:visible/>
-		<Fuga client:visible/>
-	</ul>
-</main>
+	<ReactComponent client:visible/>
+	<SvelteComponent client:visible/>
+</main>../components/ReactComponent.tsx

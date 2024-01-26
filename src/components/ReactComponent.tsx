@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
-export const Hoge = () => {
+export const ReactComponent = () => {
   const [count, setCount] = useState(0)
   const add = () => setCount(count + 1)
   const sub = () => setCount(count - 1)
