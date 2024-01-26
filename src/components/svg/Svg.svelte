@@ -3,13 +3,14 @@
 	import { fade, draw, fly } from 'svelte/transition';
 	import { expand } from './custom-transitions.ts';
 	import { inner, outer } from './shape.ts';
-	let open = true;
+    import { onMount } from 'svelte'
+	let open = false;
+	onMount(() => {
+		setTimeout(() => {
+			open = true
+		}, 50)
+	})
 </script>
-
-<label>
-	<input type="checkbox" bind:checked={open} />
-	Show me the magic
-</label>
 
 {#if open}
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 124">
