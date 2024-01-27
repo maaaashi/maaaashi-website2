@@ -1,14 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { ReactComponent } from '../components/ReactComponent.tsx';
-import SvelteComponent from '../components/SvelteComponent.svelte'
 import Svg from '../components/svg/Svg.svelte';
 ---
 
 <Layout title="Maaaashi's Website" />
 <main>
-	<ReactComponent client:visible/>
-	<SvelteComponent client:visible/>
 	<div class="w-40 mx-auto">
 		<Svg client:load/>
 	</div>
