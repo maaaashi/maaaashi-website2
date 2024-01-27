@@ -8,12 +8,12 @@
   onMount(() => {
     setTimeout(() => {
       open = true
-    }, 50)
+    }, 10)
   })
 </script>
 
 {#if open}
   {#each text as char, i}
-    <span in:fade|global={{ delay: 1000 + i * 150, duration: +duration }} class="text-stone-800">{char}</span>
+    <span in:fade|global={{ delay: 1000 + (i - 1) * 150, duration: +duration }}>{char}</span>
   {/each}
 {/if}

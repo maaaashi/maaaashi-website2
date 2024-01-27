@@ -1,10 +1,20 @@
 ---
 import TextReveal from '../design/TextReveal.svelte'
+import '@fontsource/zen-kaku-gothic-new'
 
 import Svg from '../svg/Svg.svelte'
 ---
 
 <main>
-  <TextReveal client:load text="MAAAASHI's WebSite" duration="0"/>
+  <div class="text-stone-800">
+    <TextReveal client:load text="MAAAASHI's WebSite" duration="0"/>
+    あいうえお
+  </div>
   <!-- <Svg client:load/> -->
 </main>
+
+<style>
+  * {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+  }
+</style>
