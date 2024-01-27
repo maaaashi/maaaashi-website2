@@ -4,7 +4,7 @@
 	import { expand } from './custom-transitions.ts';
 	import { inner, outer } from './shape.ts';
 	import { onMount } from 'svelte'
-	import TextReveal from '../design/TextReveal.svelte'
+	import TextReveal from '../TextReveal.svelte'
 	let open = false;
 
 	onMount(() => {
