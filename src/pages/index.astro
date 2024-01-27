@@ -1,11 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Svg from '../components/svg/Svg.svelte';
+import Top from '../components/top/Top.astro';
 ---
 
 <Layout title="Maaaashi's Website" />
-<main>
-	<div class="w-40 mx-auto">
-		<Svg client:load/>
-	</div>
-</main>
+<Top client:load/>

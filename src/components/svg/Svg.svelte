@@ -4,6 +4,7 @@
 	import { expand } from './custom-transitions.ts';
 	import { inner, outer } from './shape.ts';
 	import { onMount } from 'svelte'
+	import TextReveal from '../design/TextReveal.svelte'
 	let open = false;
 
 	onMount(() => {
@@ -26,9 +27,7 @@
 	</svg>
 
 	<div class="centered" out:fly={{ y: -20, duration: 800 }}>
-		{#each 'MAAAASHI' as char, i}
-			<span in:fade|global={{ delay: 1000 + i * 150, duration: 800 }}>{char}</span>
-		{/each}
+		<TextReveal text="MAAAASHI" duration='800'/>
 	</div>
 {/if}
 
