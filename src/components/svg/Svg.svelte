@@ -43,12 +43,6 @@
 		opacity: 1;
 	}
 
-	label {
-		position: absolute;
-		top: 1em;
-		left: 1em;
-	}
-
 	.centered {
 		font-size: 15vw;
 		position: absolute;
