@@ -1,8 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte'
 	import { fade } from 'svelte/transition';
+
   export let text: string;
   export let duration: string;
+
   let open = false;
 
   onMount(() => {
