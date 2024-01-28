@@ -4,5 +4,5 @@ interface Props {
 }
 
 export const BoxTitle: FC<Props> = ({ text }) => {
-  return <h3 className='font-bold'>{text}</h3>
+  return <h3 className='font-bold text-lg'>{text}</h3>
 }
