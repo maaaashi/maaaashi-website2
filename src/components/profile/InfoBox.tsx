@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const ProfileArea = () => {
+export const InfoBox = () => {
   const [activeTab, setActiveTab] = useState(0)
   return (
     <>
