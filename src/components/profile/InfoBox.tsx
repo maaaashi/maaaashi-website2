@@ -17,21 +17,9 @@ export const InfoBox = () => {
         ))}
       </div>
       <div className='p-4 bg-white rounded-lg'>
-        {activeTab === 0 && (
-          <>
-            <BoxTitle text={`Tab ${activeTab + 1}`} />
-          </>
-        )}
-        {activeTab === 1 && (
-          <>
-            <BoxTitle text={`Tab ${activeTab + 1}`} />
-          </>
-        )}
-        {activeTab === 2 && (
-          <>
-            <BoxTitle text={`Tab ${activeTab + 1}`} />
-          </>
-        )}
+        {activeTab === 0 && <BoxTitle text={`Tab ${activeTab + 1}`} />}
+        {activeTab === 1 && <BoxTitle text={`Tab ${activeTab + 1}`} />}
+        {activeTab === 2 && <BoxTitle text={`Tab ${activeTab + 1}`} />}
       </div>
     </>
   )
