@@ -1,7 +1,7 @@
 ---
 import TextReveal from './TextReveal.svelte'
 import '@fontsource/zen-kaku-gothic-new'
-import { WindowMock } from './WindowMock.tsx'
+import { WindowMock } from './profile/WindowMock.tsx'
 
 import Svg from './svg/Svg.svelte.tsx'
 ---
@@ -11,8 +11,8 @@ import Svg from './svg/Svg.svelte.tsx'
     <div class="text-stone-800 flex-1">
       This is <TextReveal client:load text="MAAAASHI's WebSite" duration="0"/>
     </div>
-    <div class="flex-1 p-4">
-      <WindowMock />
+    <div class="p-4">
+      <WindowMock client:load/>
     </div>
   </div>
   <!-- <Svg client:load/> -->
