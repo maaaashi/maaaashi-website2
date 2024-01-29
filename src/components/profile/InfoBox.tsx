@@ -16,7 +16,11 @@ export const InfoBox = () => {
           </button>
         ))}
       </div>
-      <div className='p-4 bg-white rounded-lg'>
+      <div
+        className={`p-4 bg-white rounded-lg ${
+          activeTab === 0 && 'rounded-tl-none'
+        } ${activeTab === 2 && 'rounded-tr-none'}`}
+      >
         {activeTab === 0 && <BoxTitle text={`Tab ${activeTab + 1}`} />}
         {activeTab === 1 && <BoxTitle text={`Tab ${activeTab + 1}`} />}
         {activeTab === 2 && <BoxTitle text={`Tab ${activeTab + 1}`} />}
