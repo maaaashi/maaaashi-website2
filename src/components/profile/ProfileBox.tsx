@@ -41,12 +41,6 @@ export const ProfileBox = () => {
               </a>
             }
           />
-          {/* <div>
-            <div>name: 大岡 正志 / Masashi Ooka</div>
-            <div>age: {myAge}</div>
-            <div>job: Web Application Engineer</div>
-            <div>Email: ooka.ms.0r7e2p3@gmail.com</div>
-          </div> */}
         </dl>
       </div>
     </div>
