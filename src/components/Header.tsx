@@ -2,8 +2,10 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className='p-4 border-b-[1px] w-screen font-bold'>
-      {"MAAAASHI'S WEBSITE"}
+    <div className='border-b-[1px] w-screen font-bold'>
+      <nav className='navbar'>
+        <button className='btn btn-ghost'>{"MAAAASHI'S WEBSITE"}</button>
+      </nav>
     </div>
   )
 }
