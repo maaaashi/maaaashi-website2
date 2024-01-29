@@ -1,5 +1,6 @@
 import React from 'react'
 import { BoxTitle } from './BoxTitle'
+import { ProfileItem } from './ProfileItem'
 
 export const ProfileBox = () => {
   const myAge = Math.abs(
@@ -16,11 +17,37 @@ export const ProfileBox = () => {
             <img src='/profile.JPG' alt='IMAGE' />
           </div>
         </div>
-        <div>
-          <div>name: 大岡 正志 / Masashi Ooka</div>
-          <div>age: {myAge}</div>
-          <div>job: Web Application Engineer</div>
-        </div>
+        <dl>
+          <ProfileItem
+            definitionTerm='Name'
+            definitionDescription='大岡 正志 / Masashi Ooka'
+          />
+          <ProfileItem
+            definitionTerm='Age'
+            definitionDescription={myAge.toString()}
+          />
+          <ProfileItem
+            definitionTerm='Job'
+            definitionDescription='Web Application Engineer'
+          />
+          <ProfileItem
+            definitionTerm='Email'
+            definitionDescription={
+              <a
+                href='mailto:ooka.ms.0r7e2p3@gmail.com'
+                className='underline text-info'
+              >
+                ooka.ms.0r7e2p3@gmail.com
+              </a>
+            }
+          />
+          {/* <div>
+            <div>name: 大岡 正志 / Masashi Ooka</div>
+            <div>age: {myAge}</div>
+            <div>job: Web Application Engineer</div>
+            <div>Email: ooka.ms.0r7e2p3@gmail.com</div>
+          </div> */}
+        </dl>
       </div>
     </div>
   )
