@@ -17,14 +17,10 @@ export const MyProfileArea = () => {
       <div className='mockup-phone block lg:hidden'>
         <div className='camera'></div>
         <div className='display'>
-          <div className='artboard artboard-demo phone-1'>
-            <div className=''>
-              <div className='w-full'>
-                <InfoBox />
-              </div>
-              <div className='w-full'>
-                <ProfileBox />
-              </div>
+          <div className='artboard artboard-demo phone-1 p-2 pt-12 block overflow-y-auto'>
+            <ProfileBox />
+            <div className='mt-4 lg:m-0'>
+              <InfoBox />
             </div>
           </div>
         </div>
