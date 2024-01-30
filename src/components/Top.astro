@@ -1,7 +1,7 @@
 ---
 import TextReveal from './TextReveal.svelte'
 import '@fontsource/zen-kaku-gothic-new'
-import { WindowMock } from './profile/WindowMock.tsx'
+import { MyProfileArea } from './profile/WindowMock.tsx'
 
 import Svg from './svg/Svg.svelte.tsx'
 ---
@@ -12,7 +12,7 @@ import Svg from './svg/Svg.svelte.tsx'
       <TextReveal client:load text="Welcome!" duration="0"/>
     </div>
     <div class="p-4 pt-12">
-      <WindowMock client:load/>
+      <MyProfileArea client:load/>
     </div>
   </div>
   <!-- <Svg client:load/> -->
