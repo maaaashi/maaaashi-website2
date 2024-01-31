@@ -37,9 +37,9 @@ export const InfoBox = () => {
       <div
         className={`p-4 bg-base-100 rounded-lg ${
           activeTab.id === 0 && 'rounded-tl-none'
-        } ${activeTab.id === 2 && 'rounded-tr-none'}`}
+        } ${activeTab.id === tabs.length - 1 && 'rounded-tr-none'}`}
       >
-        {activeTab.component}
+        <div className='w-80'>{activeTab.component}</div>
       </div>
     </>
   )
