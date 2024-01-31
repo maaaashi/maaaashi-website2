@@ -1,6 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { themeChange } from 'theme-change'
 
 export const ThemeController = () => {
+  useEffect(() => {
+    themeChange(false)
+  }, [])
+
   return (
     <>
       <label className='cursor-pointer gap-2 hidden md:flex'>
@@ -39,7 +44,12 @@ export const ThemeController = () => {
       </label>
       <label className='swap swap-rotate md:hidden'>
         {/* this hidden checkbox controls the state */}
-        <input type='checkbox' className='theme-controller' value='synthwave' />
+        <input
+          type='checkbox'
+          className='theme-controller'
+          value='synthwave'
+          // data-set-theme='light'
+        />
 
         {/* sun icon */}
         <svg
