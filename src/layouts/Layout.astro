@@ -1,6 +1,7 @@
 ---
 import "../global.css"
 import Header from '../components/Header.tsx'
+import Footer from '../components/Footer.vue'
 interface Props {
 	title: string;
 }
@@ -21,5 +22,6 @@ const { title } = Astro.props;
 	<body class="bg-base-50 min-h-screen overflow-x-hidden">
 		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
