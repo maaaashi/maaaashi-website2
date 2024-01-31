@@ -17,7 +17,7 @@ export const MyProfileArea = () => {
       <div className='mockup-phone block md:hidden'>
         <div className='camera'></div>
         <div className='display'>
-          <div className='artboard artboard-demo phone-1 p-2 pt-12 block overflow-y-auto bg-base-200'>
+          <div className='artboard artboard-demo phone-1 p-2 pt-12 block overflow-y-auto overflow-x-hidden bg-base-200'>
             <ProfileBox />
             <div className='mt-4 md:m-0'>
               <InfoBox />
