@@ -1,16 +1,24 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { BoxTitle } from './BoxTitle'
+import { AboutMe } from './info/AboutMe'
+import { Experience } from './info/Experience'
+import { Skill } from './info/Skill'
 
 export const InfoBox = () => {
   class Tab {
-    constructor(public id: number, public title: string) {}
+    constructor(
+      public id: number,
+      public title: string,
+      public component: ReactNode
+    ) {}
   }
   const tabs = [
-    new Tab(0, 'TabTitle 1'),
-    new Tab(1, 'TabTitle 2'),
-    new Tab(2, 'TabTitle 3'),
+    new Tab(0, 'ABOUT ME', <AboutMe />),
+    new Tab(1, 'EXPERIENCE', <Experience />),
+    new Tab(2, 'SKILL', <Skill />),
   ]
   const [activeTab, setActiveTab] = useState<Tab>(tabs[0])
+
   return (
     <>
       <div role='tablist' className='tabs tabs-lifted'>
@@ -31,7 +39,7 @@ export const InfoBox = () => {
           activeTab.id === 0 && 'rounded-tl-none'
         } ${activeTab.id === 2 && 'rounded-tr-none'}`}
       >
-        <BoxTitle text={activeTab.title} />
+        {activeTab.component}
       </div>
     </>
   )
