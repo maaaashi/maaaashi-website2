@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { BoxTitle } from './BoxTitle'
-import './profile.css'
 
 export const InfoBox = () => {
   class Tab {
@@ -18,7 +17,7 @@ export const InfoBox = () => {
         {tabs.map((tab) => (
           <button
             className={`tab tab-border-none ${
-              activeTab.id === tab.id && 'tab-active bg-stone-50'
+              activeTab.id === tab.id && 'tab-active bg-base-100'
             }`}
             key={`tab_${tab.id}`}
             onClick={() => setActiveTab(tab)}
@@ -28,7 +27,7 @@ export const InfoBox = () => {
         ))}
       </div>
       <div
-        className={`p-4 bg-stone-50 rounded-lg ${
+        className={`p-4 bg-base-100 rounded-lg ${
           activeTab.id === 0 && 'rounded-tl-none'
         } ${activeTab.id === 2 && 'rounded-tr-none'}`}
       >

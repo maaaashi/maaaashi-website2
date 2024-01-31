@@ -8,7 +8,7 @@ export const ProfileBox = () => {
     ).getUTCFullYear() - 1970
   )
   return (
-    <div className='p-4 bg-white rounded-lg flex flex-col gap-4'>
+    <div className='p-4 bg-base-100 rounded-lg flex flex-col gap-4'>
       <BoxTitle text='Profile' />
       <div className='flex gap-2 flex-col lg:flex-row items-center'>
         <div className='avatar'>
