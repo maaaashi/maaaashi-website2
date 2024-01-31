@@ -39,7 +39,7 @@ export const InfoBox = () => {
           activeTab.id === 0 && 'rounded-tl-none'
         } ${activeTab.id === tabs.length - 1 && 'rounded-tr-none'}`}
       >
-        <div className='w-80'>{activeTab.component}</div>
+        <div className='md:w-80'>{activeTab.component}</div>
       </div>
     </>
   )
