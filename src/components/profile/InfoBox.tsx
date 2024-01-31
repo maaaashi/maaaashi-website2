@@ -3,30 +3,36 @@ import { BoxTitle } from './BoxTitle'
 import './profile.css'
 
 export const InfoBox = () => {
-  const [activeTab, setActiveTab] = useState(0)
+  class Tab {
+    constructor(public id: number, public title: string) {}
+  }
+  const tabs = [
+    new Tab(0, 'TabTitle 1'),
+    new Tab(1, 'TabTitle 2'),
+    new Tab(2, 'TabTitle 3'),
+  ]
+  const [activeTab, setActiveTab] = useState<Tab>(tabs[0])
   return (
     <>
       <div role='tablist' className='tabs tabs-lifted'>
-        {[0, 1, 2].map((i) => (
+        {tabs.map((tab) => (
           <button
             className={`tab tab-border-none ${
-              activeTab === i && 'tab-active bg-stone-50'
+              activeTab.id === tab.id && 'tab-active bg-stone-50'
             }`}
-            key={`tab_${i}`}
-            onClick={() => setActiveTab(i)}
+            key={`tab_${tab.id}`}
+            onClick={() => setActiveTab(tab)}
           >
-            Tab {i + 1}
+            {tab.title}
           </button>
         ))}
       </div>
       <div
         className={`p-4 bg-stone-50 rounded-lg ${
-          activeTab === 0 && 'rounded-tl-none'
-        } ${activeTab === 2 && 'rounded-tr-none'}`}
+          activeTab.id === 0 && 'rounded-tl-none'
+        } ${activeTab.id === 2 && 'rounded-tr-none'}`}
       >
-        {activeTab === 0 && <BoxTitle text={`Tab ${activeTab + 1}`} />}
-        {activeTab === 1 && <BoxTitle text={`Tab ${activeTab + 1}`} />}
-        {activeTab === 2 && <BoxTitle text={`Tab ${activeTab + 1}`} />}
+        <BoxTitle text={activeTab.title} />
       </div>
     </>
   )
