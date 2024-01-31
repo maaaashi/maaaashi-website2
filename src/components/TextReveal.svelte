@@ -16,6 +16,6 @@
 
 {#if open}
   {#each text as char, i}
-    <span in:fade|global={{ delay: 1000 + (i - 1) * 150, duration: +duration }}>{char}</span>
+    <span in:fade|global={{ delay: 1000 + (i - 1) * 50, duration: +duration }}>{char}</span>
   {/each}
 {/if}
