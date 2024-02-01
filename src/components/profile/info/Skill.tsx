@@ -7,10 +7,10 @@ export const Skill = () => {
     <div>
       <BoxTitle text={'スキル'} />
       <BoxBody>
-        <ul>
-          <li>TypeScript</li>
-          <li>Next.js</li>
-        </ul>
+        <p>TypeScript, Next.js, React, VueJS, SvelteKit, Svelte, NestJS</p>
+        <p>Ruby, RubyOnRails</p>
+        <p>GraphQL</p>
+        <p>AWS</p>
         <b>資格</b>
         <ul>
           <li>AWS Solution Architect Associate</li>

@@ -11,11 +11,6 @@ export const AboutMe = () => {
         <p>
           フロントエンド、バックエンド、インフラなど、幅広く開発を行っています。
         </p>
-        <b>LIKE</b>
-        <ul>
-          <li>アジャイル</li>
-          <li>チーム開発</li>
-        </ul>
       </BoxBody>
     </div>
   )
