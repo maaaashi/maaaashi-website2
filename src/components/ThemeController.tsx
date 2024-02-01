@@ -1,9 +1,13 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { themeChange } from 'theme-change'
 
 export const ThemeController = () => {
+  const [isDark, setIsDark] = useState(false)
+
   useEffect(() => {
     themeChange(false)
+    const theme = document.documentElement.getAttribute('data-theme')
+    if (theme === 'dark') setIsDark(true)
   }, [])
 
   return (
@@ -25,8 +29,11 @@ export const ThemeController = () => {
         </svg>
         <input
           type='checkbox'
-          value='synthwave'
           className='toggle theme-controller'
+          checked={isDark}
+          onChange={() => setIsDark(!isDark)}
+          data-toggle-theme='dark'
+          data-act-class='dark'
         />
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -47,8 +54,10 @@ export const ThemeController = () => {
         <input
           type='checkbox'
           className='theme-controller'
-          value='synthwave'
-          // data-set-theme='light'
+          checked={!isDark}
+          onChange={() => setIsDark(!isDark)}
+          data-toggle-theme='dark'
+          data-act-class='dark'
         />
 
         {/* sun icon */}
