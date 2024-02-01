@@ -16,7 +16,7 @@
 
 {#if open}
   <div class="-z-10 sticky">
-    <div class="absolute left-2/4 top-1/2">
+    <div class="centered absolute left-1/2 top-1/2">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
       width="554.000000pt" height="495.000000pt" viewBox="0 0 554.000000 495.000000"
       preserveAspectRatio="xMidYMid meet">
@@ -181,7 +181,7 @@
       </svg>
     </div>
 
-    <div class="centered font-normal absolute left-2/4 top-1/2" out:fly={{ y: -20, duration: 800 }}>
+    <div class="centered font-normal absolute left-1/2 top-1/2 text-[15vw]" out:fly={{ y: -20, duration: 800 }}>
       <TextReveal text="MAAAASHI" duration='800'/>
     </div>
   </div>
@@ -199,7 +199,6 @@
 	}
 
 	.centered {
-		font-size: 15vw;
 		transform: translate(-50%, -50%);
 		font-family: 'Overpass';
 		letter-spacing: 0.12em;
