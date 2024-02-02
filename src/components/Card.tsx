@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Card = () => {
   return (
-    <div className='card w-96 glass'>
+    <div className='card min-w-96 w-96 glass'>
       <figure>
         <img
           src='https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg'
