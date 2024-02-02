@@ -1,22 +1,24 @@
 <script lang="ts">
-	import { quintOut } from 'svelte/easing';
 	import { fade, draw, fly } from 'svelte/transition';
-	import { expand } from './custom-transitions.ts';
-	import { inner, outer } from './shape.ts';
 	import { onMount } from 'svelte'
-	import TextReveal from '../TextReveal.svelte'
+	import TextReveal from './TextReveal.svelte'
 	let open = false;
+  let zIndex = 'z-10'
 
 	onMount(() => {
 		setTimeout(() => {
 			open = true
 		}, 50)
+    
+    setTimeout(() => {
+      open = false
+    }, 3000)
 	})
 </script>
 
 {#if open}
-  <div class="-z-10 sticky">
-    <div class="centered absolute left-1/2 top-1/2">
+  <div class={`sticky ${zIndex}`}>
+    <div class="centered">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
       width="554.000000pt" height="495.000000pt" viewBox="0 0 554.000000 495.000000"
       preserveAspectRatio="xMidYMid meet">
@@ -181,7 +183,7 @@
       </svg>
     </div>
 
-    <div class="centered font-normal absolute left-1/2 top-1/2 text-[15vw]" out:fly={{ y: -20, duration: 800 }}>
+    <div class="centered font-normal text-[15vw]" out:fly={{ y: -20, duration: 800 }}>
       <TextReveal text="MAAAASHI" duration='800'/>
     </div>
   </div>
@@ -194,11 +196,14 @@
 	}
 
 	path {
-		fill: #676778;
-		opacity: 1;
+		fill: #fff;
+		opacity: 0.4;
 	}
 
 	.centered {
+    position: fixed;
+    left: 50%;
+    top: 50%;
 		transform: translate(-50%, -50%);
 		font-family: 'Overpass';
 		letter-spacing: 0.12em;
