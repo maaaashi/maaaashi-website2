@@ -3,13 +3,12 @@
 	import { onMount } from 'svelte'
 	import TextReveal from './TextReveal.svelte'
 	let open = false;
-  let zIndex = 'z-10'
 
-	onMount(() => {
+  onMount(() => {
 		setTimeout(() => {
 			open = true
 		}, 50)
-    
+
     setTimeout(() => {
       open = false
     }, 3000)
@@ -17,7 +16,7 @@
 </script>
 
 {#if open}
-  <div class={`sticky ${zIndex}`}>
+  <div class="bg-base-100 w-screen h-screen fixed top-0 opacity-80 z-10" out:fly={{ y: -20, duration: 800 }}>
     <div class="centered">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
       width="554.000000pt" height="495.000000pt" viewBox="0 0 554.000000 495.000000"
@@ -25,6 +24,7 @@
         <g out:fade={{ duration: 200 }} transform="translate(0.000000,495.000000) scale(0.100000,-0.100000)"
         fill="#000000" stroke="none">
           <path
+            class="fill-base-200"
             in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M2745 4486 c-71 -19 -101 -32 -151 -68 -79 -56 -144 -183 -144 -278
@@ -37,6 +37,7 @@
               -89 187 -311 293 -508 243z`}
           />
           <path
+            class="fill-base-200"
             in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M1770 4267 c-21 -73 -58 -142 -97 -181 -28 -28 -57 -43 -125 -64 -48
@@ -47,6 +48,7 @@
               12 -26 26 -26 44 0 55 59 83 94 44z`}
           />
           <path
+            class="fill-base-200"
             in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M3962 4237 c-6 -7 -12 -51 -14 -97 l-3 -85 -80 -7 c-267 -24 -443
@@ -78,6 +80,7 @@
               138 4z`}
           />
           <path
+            class="fill-base-200"
             in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M2805 3990 c-47 -49 -89 -62 -242 -75 -122 -11 -151 -17 -207 -43
@@ -89,6 +92,7 @@
               214 92 29 34 64 123 53 134 -2 2 -16 -9 -32 -26z`}
           />
           <path
+            class="fill-base-200"
             in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M1170 3634 c-235 -28 -336 -50 -435 -98 -89 -42 -133 -79 -157 -133
@@ -124,6 +128,7 @@
               -12 10 -16 -136 -4 -172 15 -40 21 -68 53 -61 72 9 21 14 19 31 -14z`}
           />
           <path
+            class="fill-base-200"
             in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M4650 3012 l0 -60 79 -3 c85 -4 114 -18 155 -72 28 -37 28 -116 0
@@ -132,6 +137,7 @@
               237 279 -6 74 -32 128 -85 178 -61 58 -97 72 -200 77 l-93 4 0 -60z`}
           />
           <path
+            class="fill-base-200"
             in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M3581 2744 c-45 -88 -45 -103 -1 -104 28 -1 148 -47 179 -69 17 -12
@@ -139,12 +145,14 @@
               40 -4 0 -27 -39 -51 -86z`}
           />
           <path
+            class="fill-base-200"
             in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M1940 2689 c-6 -23 -9 -43 -6 -46 2 -3 32 1 66 9 l62 14 -52 32 c-28
               18 -53 32 -55 32 -2 0 -9 -18 -15 -41z`}
           />
           <path
+            class="fill-base-200"
             in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M2490 2579 c-270 -17 -528 -60 -636 -108 -31 -14 -45 -27 -51 -48 -4
@@ -165,6 +173,7 @@
               65 -3 35 1 45 21 65 28 28 75 26 105 -5z`}
           />
           <path
+            class="fill-base-200"
           in:draw={{ duration: 1000 }}
             style="stroke: #555; stroke-width: 25;"
             d={`M3903 2294 c-33 -5 -33 -5 -33 -65 l0 -59 133 0 c298 0 619 -58 692
@@ -193,11 +202,6 @@
 	svg {
 		width: 100%;
 		height: 100%;
-	}
-
-	path {
-		fill: #fff;
-		opacity: 0.4;
 	}
 
 	.centered {
