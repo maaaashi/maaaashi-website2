@@ -3,9 +3,12 @@ import TextReveal from './TextReveal.svelte'
 import { MyProfileArea } from './profile/'
 
 import LogoReveal from './LogoReveal.svelte'
+import Activities from './Activities.astro'
 ---
 
 <main>
+  {process.env.NODE_ENV !== 'development' && <LogoReveal client:load/>}
+    
   <div class="flex flex-col lg:flex-row items-center lg:items-start">
     <div class="flex-1">
       <p><TextReveal client:load text="Thank you for visiting our site. It is currently under development. Please check back soon for updates." duration="3000"/></p>
@@ -15,5 +18,5 @@ import LogoReveal from './LogoReveal.svelte'
       <MyProfileArea client:load/>
     </div>
   </div>
-  <LogoReveal client:load/>
+  <Activities />
 </main>
