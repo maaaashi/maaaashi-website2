@@ -1,4 +1,10 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "*.spec": "gauge",
+    "*.cpt": "gauge"
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500
 }
