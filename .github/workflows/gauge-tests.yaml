@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '20'
-      - run: apt-get update && apt-get install -y curl unzip libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+      - run: sudo apt-get update && sudo apt-get install -y curl unzip libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 
       - run: curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
       - run: cd e2e/ && npm i && HEADLESS=true CHROME_ARGS="--no-sandbox" gauge run specs/example.spec
