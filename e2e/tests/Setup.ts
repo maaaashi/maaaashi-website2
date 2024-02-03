@@ -4,8 +4,7 @@ import { closeBrowser, openBrowser, setViewPort } from 'taiko'
 export default class Top {
   @BeforeSuite()
   public async beforeSuite() {
-    const headless = process.env.HEADLESS === 'Y'
-    await openBrowser({ headless })
+    await openBrowser({ args: ['--no-sandbox', '--disable-setuid-sandbox'] })
   }
 
   @AfterSuite()
