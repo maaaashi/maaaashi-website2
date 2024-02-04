@@ -15,14 +15,16 @@ export default class Top {
   }
 
   @Step('<tag>タグの<className>クラスが<number>つ表示されていること')
-  public checkCount(tag: string, className: string, number) {
+  public async checkCount(tag: string, className: string, number: string) {
     const target = $(`${tag}.${className}`)
-    assert.equal(target.elements.length, +number)
+    const actual = (await target.elements()).length
+    assert.strictEqual(actual, +number)
   }
 
   @Step('<tag>タグの<className>クラスが表示されていないこと')
-  public checkCountNone(tag: string, className: string) {
+  public async checkCountNone(tag: string, className: string) {
     const target = $(`${tag}.${className}`)
-    assert.ok(!target.exists)
+    const actual = await target.isVisible()
+    assert.ok(!actual)
   }
 }
