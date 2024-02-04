@@ -15,5 +15,11 @@ jobs:
           node-version: '20'
       - run: sudo apt-get update && sudo apt-get install -y curl unzip libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
       - run: curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
-      - run: cd web/ && npm i && npm run build && npm run preview &
-      - run: cd e2e/ && npm i && HEADLESS=true CHROME_ARGS="--no-sandbox" gauge run specs
+      - run: |
+          cd web/
+          npm i
+          npm run build
+          npm run preview & cd ../e2e/
+          cd ../e2e/
+          npm i
+          HEADLESS=true CHROME_ARGS="--no-sandbox" gauge run specs
