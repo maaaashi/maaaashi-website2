@@ -25,6 +25,6 @@ export default class Top {
   public async checkCountNone(tag: string, className: string) {
     const target = $(`${tag}.${className}`)
     const actual = await target.isVisible()
-    assert.ok(actual)
+    assert.ok(!actual)
   }
 }
