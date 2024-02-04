@@ -21,7 +21,7 @@
 
 ```bash
 $ git clone https://github.com/maaaashi/maaaashi-website2.git
-$ cd maaaashi-website2
+$ cd maaaashi-website2/web
 $ npm install
 ```
 

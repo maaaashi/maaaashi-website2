@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "rm -rf ./e2e",
     "build": "astro check && astro build",
-    "build:e2e": "npm run prebuild && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
