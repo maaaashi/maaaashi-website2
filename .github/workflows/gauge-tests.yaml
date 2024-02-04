@@ -16,5 +16,5 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y curl unzip libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 
       - run: curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
-      - run: npm i && npm run build:e2e && npm run preview
+      - run: npm i && npm run build:e2e && npm run preview &
       - run: cd e2e/ && npm i && HEADLESS=true CHROME_ARGS="--no-sandbox" gauge run specs
