@@ -23,10 +23,6 @@ jobs:
           cd ../e2e/
           npm i
           HEADLESS=true CHROME_ARGS="--no-sandbox" gauge run specs
-      - run: |
-          echo ${{ secrets.VERCEL_TOKEN }}
-          echo ${{ secrets.VERCEL_ORG_ID }}
-          echo ${{ secrets.VERCEL_PROJECT_ID }}
       - name: Deploy to Vercel
         if: success()
         uses: amondnet/vercel-action@v20
