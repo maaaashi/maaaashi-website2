@@ -23,3 +23,10 @@ jobs:
           cd ../e2e/
           npm i
           HEADLESS=true CHROME_ARGS="--no-sandbox" gauge run specs
+      - name: Deploy to Vercel
+        if: success()
+        uses: vercel/action@20.0.0
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
