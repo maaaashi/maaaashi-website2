@@ -3,6 +3,8 @@
 
 ## TOPページの表示(共通)
 * "h1"タグの中に"MAAAASHI'S WEBSITE"という文字があること
+* "h2"タグの中に"Activities"という文字があること
+* "h3"タグの中に"Blogs"という文字があること
 
 ## TOPページの表示(PC)
 * ウィンドウサイズを変更(width: "1920"px, height: "1080"px)
