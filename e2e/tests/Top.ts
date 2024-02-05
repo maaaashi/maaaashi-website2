@@ -8,7 +8,7 @@ export default class Top {
     await goto('localhost:4321/')
   }
 
-  @Step('<text>という文字があること')
+  @Step('<text>という文字列が表示されていること')
   public async checkDisplay(innerText: string) {
     const target = text(innerText)
     const actual = await target.exists()
@@ -27,5 +27,40 @@ export default class Top {
     const target = $(`${tag}.${className}`)
     const actual = await target.isVisible()
     assert.ok(!actual)
+  }
+
+  @Step('PC用dark modeのスイッチが表示されていること')
+  public async checkPCDarkModeSwitch() {
+    const target = $('.theme-controll-pc')
+    const actual = await target.isVisible()
+    assert.ok(actual)
+  }
+
+  @Step('PC用dark modeのスイッチが表示されていないこと')
+  public async checkNotPCDarkModeSwitch() {
+    const target = $('.theme-controll-pc')
+    const actual = await target.isVisible()
+    assert.ok(!actual)
+  }
+
+  @Step('Mobile用dark modeのスイッチが表示されていること')
+  public async checkMobileDarkModeSwitch() {
+    const target = $('.theme-controll-mobile')
+    const actual = await target.isVisible()
+    assert.ok(actual)
+  }
+
+  @Step('Mobile用dark modeのスイッチが表示されていないこと')
+  public async checkNotMobileDarkModeSwitch() {
+    const target = $('.theme-controll-mobile')
+    const actual = await target.isVisible()
+    assert.ok(!actual)
+  }
+
+  @Step('ブログセクションが表示されていること')
+  public async checkBlogSectionView() {
+    const target = $('section.blogs')
+    const actual = await target.exists()
+    assert.ok(actual)
   }
 }

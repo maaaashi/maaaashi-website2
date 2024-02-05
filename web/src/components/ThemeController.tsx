@@ -12,7 +12,7 @@ export const ThemeController = () => {
 
   return (
     <>
-      <label className='cursor-pointer gap-2 hidden md:flex'>
+      <label className='cursor-pointer gap-2 hidden md:flex theme-controll-pc'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='20'
@@ -49,7 +49,7 @@ export const ThemeController = () => {
           <path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'></path>
         </svg>
       </label>
-      <label className='swap swap-rotate md:hidden'>
+      <label className='swap swap-rotate md:hidden theme-controll-mobile'>
         {/* this hidden checkbox controls the state */}
         <input
           type='checkbox'
