@@ -1,5 +1,5 @@
 import { Step } from 'gauge-ts'
-import { $, goto } from 'taiko'
+import { $, below, goto, text } from 'taiko'
 import assert = require('assert')
 
 export default class Top {
@@ -8,10 +8,11 @@ export default class Top {
     await goto('localhost:4321/')
   }
 
-  @Step('<tag>タグの中に<text>という文字があること')
-  public checkDisplay(tag: string, text: string) {
-    const target = $(`${tag}:contains(${text})`)
-    assert.ok(target.exists)
+  @Step('<text>という文字があること')
+  public async checkDisplay(innerText: string) {
+    const target = text(innerText)
+    const actual = await target.exists()
+    assert.ok(actual)
   }
 
   @Step('<tag>タグの<className>クラスが<number>つ表示されていること')
