@@ -5,8 +5,11 @@
 <div align="center">Github repository containing the source code for Maaaashi's Website.</div>
 
 <p align="center">
+<a href="https://github.com/maaaashi/maaaashi-website2/actions/workflows/gauge-tests.yaml" rel="nofollow">
+  <img src="https://github.com/maaaashi/maaaashi-website2/actions/workflows/gauge-tests.yaml/badge.svg" alt="Gauge E2E Tests">
+</a>
 <a href="https://twitter.com/pg_maaaashi" rel="nofollow">
-  <img src="https://img.shields.io/badge/created%20by-@pg_maaaashi-4BBAAB.svg" alt="Created by Colin McDonnell">
+  <img src="https://img.shields.io/badge/created%20by-@pg_maaaashi-4BBAAB.svg" alt="created by X@pg_maaaashi">
 </a>
 
 ## Table of Contents
