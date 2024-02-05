@@ -5,6 +5,9 @@
 <div align="center">Github repository containing the source code for Maaaashi's Website.</div>
 
 <p align="center">
+<!-- <a href="https://github.com/maaaashi/maaaashi-website2/actions/workflows/module-tests.yaml" rel="nofollow">
+  <img src="https://github.com/maaaashi/maaaashi-website2/actions/workflows/module-tests.yaml/badge.svg" alt="Module Tests">
+</a> -->
 <a href="https://github.com/maaaashi/maaaashi-website2/actions/workflows/gauge-tests.yaml" rel="nofollow">
   <img src="https://github.com/maaaashi/maaaashi-website2/actions/workflows/gauge-tests.yaml/badge.svg" alt="Gauge E2E Tests">
 </a>
