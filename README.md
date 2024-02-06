@@ -20,8 +20,8 @@
 - [Maaaashi's Website](#maaaashis-website)
 - [Table of Contents](#table-of-contents)
 - [Development](#development)
-- [Start Server](#start-server)
-- [E2E](#e2e)
+  - [Start Server](#start-server)
+  - [E2E](#e2e)
 
 # Development
 
@@ -29,7 +29,7 @@
 $ git clone https://github.com/maaaashi/maaaashi-website2.git
 ```
 
-# Start Server
+## Start Server
 
 ```bash
 $ cd maaaashi-website2/web
@@ -39,7 +39,7 @@ $ npm run dev
 
 Access to http://localhost:4321
 
-# E2E
+## E2E
 
 ```bash
 $ cd e2e/
