@@ -27,14 +27,14 @@
 
 ```bash
 $ git clone https://github.com/maaaashi/maaaashi-website2.git
-$ cd maaaashi-website2/web
-$ npm install
 ```
 
 # Start Server
 
 ```bash
-$ make dev
+$ cd maaaashi-website2/web
+$ npm install
+$ npm run dev
 ```
 
 Access to http://localhost:4321
@@ -43,5 +43,6 @@ Access to http://localhost:4321
 
 ```bash
 $ cd e2e/
-$ gauge run specs
+$ npm install
+$ npm run test
 ```

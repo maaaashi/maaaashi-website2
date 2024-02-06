@@ -22,6 +22,7 @@ jobs:
           npm run preview & cd ../e2e/
           cd ../e2e/
           npm i
+          npx playwright install 
           HEADLESS=true CHROME_ARGS="--no-sandbox" gauge run specs
       - name: Deploy to Vercel
         if: success()
