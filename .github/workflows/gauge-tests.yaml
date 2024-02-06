@@ -23,7 +23,7 @@ jobs:
           cd ../e2e/
           npm i
           npx playwright install 
-          HEADLESS=true CHROME_ARGS="--no-sandbox" gauge run specs
+          npm run test
       - name: Deploy to Vercel
         if: success()
         uses: amondnet/vercel-action@v20
