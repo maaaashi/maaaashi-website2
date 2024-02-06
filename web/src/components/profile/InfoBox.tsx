@@ -20,7 +20,7 @@ export const InfoBox = () => {
   const [activeTab, setActiveTab] = useState<Tab>(tabs[0])
 
   return (
-    <>
+    <div>
       <div role='tablist' className='tabs tabs-lifted'>
         {tabs.map((tab) => (
           <button
@@ -41,6 +41,6 @@ export const InfoBox = () => {
       >
         <div className='md:w-80'>{activeTab.component}</div>
       </div>
-    </>
+    </div>
   )
 }

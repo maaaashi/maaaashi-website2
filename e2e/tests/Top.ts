@@ -33,6 +33,18 @@ export default class Top {
     await expect(target).toBeVisible()
   }
 
+  @Step('<text>というボタンが表示されていること')
+  public async checkButtonDisplay(text: string) {
+    const target = this.page.getByRole('button', { name: text })
+    await expect(target).toBeVisible()
+  }
+
+  @Step('href<href>で、文字列<text>のリンクが表示されていること')
+  public async checkLinkDisplay(href: string, text: string) {
+    const target = this.page.getByRole('link', { name: text })
+    await expect(target).toHaveAttribute('href', href)
+  }
+
   @Step('<tag>タグの<className>クラスが表示されていること')
   public async checkSelectorVisible(tag: string, className: string) {
     const target = this.page.locator(`${tag}.${className}`)

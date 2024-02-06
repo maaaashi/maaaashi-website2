@@ -4,6 +4,8 @@ import { MyProfileArea } from './profile/'
 
 import LogoReveal from './LogoReveal.svelte'
 import Activities from './Activities.astro'
+import Experience from './Experience.astro'
+import Skill from './Skill.astro'
 ---
 
 <main>
@@ -18,5 +20,7 @@ import Activities from './Activities.astro'
       <MyProfileArea client:load/>
     </div>
   </div>
+  <Experience />
+  <Skill />
   <Activities />
 </main>
