@@ -1,12 +1,6 @@
-import { useState } from 'react'
 import { InfoBox } from './InfoBox'
 import { ProfileBox } from './ProfileBox'
-import {
-  TbArrowAutofitUp,
-  TbActivity,
-  TbArticle,
-  TbHistoryToggle,
-} from 'react-icons/tb'
+import { TbArrowAutofitUp, TbActivity, TbHistoryToggle } from 'react-icons/tb'
 import { GiSkills } from 'react-icons/gi'
 
 export const MyProfileArea = () => {
@@ -32,12 +26,6 @@ export const MyProfileArea = () => {
                 <TbActivity />
                 <a href='#Activities'>Activities</a>
               </li>
-              <ul className='ml-4'>
-                <li className='flex items-center gap-1'>
-                  <TbArticle />
-                  <a href='#Blogs'>Blogs</a>
-                </li>
-              </ul>
             </ul>
           </div>
           <div className='min-w-96 flex flex-col gap-4'>
