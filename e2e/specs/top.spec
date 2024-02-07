@@ -22,7 +22,6 @@
 * href"#Experience"で、文字列"Experience"のリンクが表示されていること
 * href"#Skill"で、文字列"Skill"のリンクが表示されていること
 * href"#Activities"で、文字列"Activities"のリンクが表示されていること
-* href"#Blogs"で、文字列"Blogs"のリンクが表示されていること
 
 ## TOPページの表示(スマホ)
 * ウィンドウサイズを変更(width: "375"px, height: "667"px)
