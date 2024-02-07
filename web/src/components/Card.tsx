@@ -4,7 +4,7 @@ export const Card = () => {
   return (
     <div className='card min-w-96 w-96 glass'>
       <figure>
-        <img src='/qiita.png' alt='car!' />
+        <img src='/qiita.png' alt='qiita' />
       </figure>
       <div className='card-body'>
         <h2 className='card-title'>
