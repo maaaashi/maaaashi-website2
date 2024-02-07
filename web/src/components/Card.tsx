@@ -1,19 +1,24 @@
-import React from 'react'
+import { BsArrowRightSquareFill } from 'react-icons/bs'
 
 export const Card = () => {
   return (
     <div className='card min-w-96 w-96 glass'>
       <figure>
-        <img
-          src='https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg'
-          alt='car!'
-        />
+        <img src='/qiita.png' alt='car!' />
       </figure>
       <div className='card-body'>
-        <h2 className='card-title'>Life hack</h2>
-        <p>How to park your car at your garage?</p>
+        <h2 className='card-title'>
+          ChatGPTに料理のレシピ・サムネイル画像を作成してもらうアプリを作ってみた
+        </h2>
+        <p>AWS TypeScript Next.js prisma ChatGPT</p>
         <div className='card-actions justify-end'>
-          <button className='btn btn-primary'>Learn now!</button>
+          <a
+            className='btn btn-primary btn-link'
+            href='https://qiita.com/maaaashi/items/43210e781f657777fe56'
+          >
+            View
+            <BsArrowRightSquareFill size={20} />
+          </a>
         </div>
       </div>
     </div>
