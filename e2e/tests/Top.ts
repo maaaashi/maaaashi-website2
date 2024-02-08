@@ -26,6 +26,18 @@ export default class Top {
     await expect(target).toHaveAttribute('href', href)
   }
 
+  @Step('<name>というチェックボックスが表示されていること')
+  public async checkCheckboxDisplay(name: string) {
+    const target = page.getByRole('checkbox', { name })
+    await expect(target).toBeVisible()
+  }
+
+  @Step('<name>というチェックボックスが表示されていないこと')
+  public async checkCheckboxHidden(name: string) {
+    const target = page.getByRole('checkbox', { name })
+    await expect(target).not.toBeVisible()
+  }
+
   @Step('<tag>タグの<className>クラスが表示されていること')
   public async checkSelectorVisible(tag: string, className: string) {
     const target = page.locator(`${tag}.${className}`)

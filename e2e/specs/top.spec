@@ -16,8 +16,8 @@
 * ウィンドウサイズを変更(width: "1920"px, height: "1080"px)
 * "div"タグの"mockup-window"クラスが表示されていること
 * "div"タグの"mockup-phone"クラスが表示されていないこと
-* "label"タグの"theme-controll-pc"クラスが表示されていること
-* "label"タグの"theme-controll-mobile"クラスが表示されていないこと
+* "PC theme controller"というチェックボックスが表示されていること
+* "Mobile theme controller"というチェックボックスが表示されていないこと
 * href"#maaaashi-website"で、文字列"Top"のリンクが表示されていること
 * href"#Experience"で、文字列"Experience"のリンクが表示されていること
 * href"#Skill"で、文字列"Skill"のリンクが表示されていること
@@ -26,5 +26,5 @@
 ## TOPページの表示(スマホ)
 * ウィンドウサイズを変更(width: "375"px, height: "667"px)
 * "div"タグの"mockup-phone"クラスが表示されていること
-* "label"タグの"theme-controll-mobile"クラスが表示されていること
-* "label"タグの"theme-controll-pc"クラスが表示されていないこと
+* "Mobile theme controller"というチェックボックスが表示されていること
+* "PC theme controller"というチェックボックスが表示されていないこと

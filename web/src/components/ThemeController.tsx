@@ -34,6 +34,7 @@ export const ThemeController = () => {
           onChange={() => setIsDark(!isDark)}
           data-toggle-theme='dark'
           data-act-class='dark'
+          aria-label='PC theme controller'
         />
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -58,6 +59,7 @@ export const ThemeController = () => {
           onChange={() => setIsDark(!isDark)}
           data-toggle-theme='dark'
           data-act-class='dark'
+          aria-label='Mobile theme controller'
         />
 
         {/* sun icon */}
