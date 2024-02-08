@@ -1,59 +1,40 @@
-import { Browser, Page, chromium, expect } from '@playwright/test'
-import { AfterSuite, BeforeSuite, Step } from 'gauge-ts'
+import { expect } from '@playwright/test'
+import { Step } from 'gauge-ts'
+import { page } from './page'
 
 export default class Top {
-  private browser: Browser
-  private page: Page
-
-  @BeforeSuite()
-  public async beforeSuite() {
-    this.browser = await chromium.launch()
-    this.page = await this.browser.newPage()
-  }
-
-  @AfterSuite()
-  public async afterSuite() {
-    await this.page.close()
-    await this.browser.close()
-  }
-
-  @Step('ウィンドウサイズを変更(width: <width>px, height: <height>px)')
-  public async resizeWindow(width: string, height: string) {
-    await this.page.setViewportSize({ width: +width, height: +height })
-  }
-
   @Step('Topページを開く')
   public async openTodo() {
-    await this.page.goto('localhost:4321/')
+    await page.goto('localhost:4321/')
   }
 
   @Step('<text>という見出しが表示されていること')
   public async checkHeadingDisplay(text: string) {
-    const target = this.page.getByRole('heading', { name: text })
+    const target = page.getByRole('heading', { name: text })
     await expect(target).toBeVisible()
   }
 
   @Step('<text>というボタンが表示されていること')
   public async checkButtonDisplay(text: string) {
-    const target = this.page.getByRole('button', { name: text })
+    const target = page.getByRole('button', { name: text })
     await expect(target).toBeVisible()
   }
 
   @Step('href<href>で、文字列<text>のリンクが表示されていること')
-  public async checkLinkDisplay(href: string, text: string) {
-    const target = this.page.getByRole('link', { name: text })
+  public async checkLinkDisply(href: string, text: string) {
+    const target = page.getByRole('link', { name: text })
     await expect(target).toHaveAttribute('href', href)
   }
 
   @Step('<tag>タグの<className>クラスが表示されていること')
   public async checkSelectorVisible(tag: string, className: string) {
-    const target = this.page.locator(`${tag}.${className}`)
+    const target = page.locator(`${tag}.${className}`)
     await expect(target).toBeVisible()
   }
 
   @Step('<tag>タグの<className>クラスが表示されていないこと')
   public async checkSelectorHidden(tag: string, className: string) {
-    const target = this.page.locator(`${tag}.${className}`)
+    const target = page.locator(`${tag}.${className}`)
     await expect(target).not.toBeVisible()
   }
 }
