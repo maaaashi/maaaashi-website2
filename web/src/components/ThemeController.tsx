@@ -32,7 +32,7 @@ export const ThemeController = () => {
           className='toggle theme-controller'
           checked={isDark}
           onChange={() => setIsDark(!isDark)}
-          data-toggle-theme='dark'
+          data-toggle-theme='dark,light'
           data-act-class='dark'
           aria-label='PC theme controller'
         />
@@ -57,7 +57,7 @@ export const ThemeController = () => {
           className='theme-controller'
           checked={!isDark}
           onChange={() => setIsDark(!isDark)}
-          data-toggle-theme='dark'
+          data-toggle-theme='dark,light'
           data-act-class='dark'
           aria-label='Mobile theme controller'
         />
