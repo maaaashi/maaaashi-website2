@@ -1,9 +1,18 @@
-import { useState, type ReactNode } from 'react'
+import { useState, type ReactNode, type FC } from 'react'
 import { AboutMe } from './AboutMe'
 import { Experience } from './Experience'
 import { Skill } from './Skill'
 
-export const InfoBox = () => {
+interface Props {
+  info: {
+    aboutme: {
+      text: string
+    }
+    experience: { date: Date; topic: string }[]
+  }
+}
+
+export const InfoBox: FC<Props> = ({ info }) => {
   class Tab {
     constructor(
       public id: number,
@@ -12,8 +21,8 @@ export const InfoBox = () => {
     ) {}
   }
   const tabs = [
-    new Tab(0, 'ABOUT ME', <AboutMe />),
-    new Tab(1, 'EXPERIENCE', <Experience />),
+    new Tab(0, 'ABOUT ME', <AboutMe aboutme={info.aboutme} />),
+    new Tab(1, 'EXPERIENCE', <Experience experience={info.experience} />),
     new Tab(2, 'SKILL', <Skill />),
   ]
   const [activeTab, setActiveTab] = useState<Tab>(tabs[0])

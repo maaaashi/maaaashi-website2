@@ -1,16 +1,21 @@
 import { BoxTitle } from '../BoxTitle'
 import { BoxBody } from '../BoxBody'
+import type { FC } from 'react'
 
-export const AboutMe = () => {
+interface Props {
+  aboutme: {
+    text: string
+  }
+}
+
+export const AboutMe: FC<Props> = ({aboutme}) => {
   return (
     <div>
       <BoxTitle text={'自己紹介'} />
       <BoxBody>
-        <p>こんにちは！大岡正志と申します。</p>
-        <p>現在、株式会社ユーザベースでWebエンジニアをしています。</p>
-        <p>
-          フロントエンド、バックエンド、インフラなど、幅広く開発を行っています。
-        </p>
+        <div dangerouslySetInnerHTML={{
+          __html: aboutme.text
+        }}/>
       </BoxBody>
     </div>
   )

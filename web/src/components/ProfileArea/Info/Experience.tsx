@@ -1,35 +1,31 @@
 import { BoxTitle } from '../BoxTitle'
 import { BoxBody } from '../BoxBody'
+import type { FC } from 'react'
 
-export const Experience = () => {
+interface Props {
+  experience: { date: string; topic: string }[]
+}
+
+export const Experience: FC<Props> = ({ experience }) => {
+  const formatDate = (date: string) => {
+    return `${new Date(date).getFullYear()}年${(new Date(date).getMonth() + 1)
+      .toString()
+      .padStart(2, '0')}月`
+  }
   return (
     <div>
       <BoxTitle text={'経歴'} />
       <BoxBody>
-        <div className='flex flex-col'>
-          <dt className='text-end w-fit self-start'>
-            <b>2020年03月</b>
-          </dt>
-          <dd className='self-end'>千葉大学工学部建築学科 卒業</dd>
-        </div>
-        <div className='flex flex-col'>
-          <dt className='text-end w-fit self-start'>
-            <b>2020年04月</b>
-          </dt>
-          <dd className='self-end'>木村情報技術株式会社 入社</dd>
-        </div>
-        <div className='flex flex-col'>
-          <dt className='text-end w-fit self-start'>
-            <b>2023年11月</b>
-          </dt>
-          <dd className='self-end'>木村情報技術株式会社 退社</dd>
-        </div>
-        <div className='flex flex-col'>
-          <dt className='text-end w-fit self-start'>
-            <b>2023年12月</b>
-          </dt>
-          <dd className='self-end'>株式会社ユーザベース 入社</dd>
-        </div>
+        {experience.map((exp, index) => {
+          return (
+            <div className='flex flex-col' key={index}>
+              <dt className='text-end w-fit self-start'>
+                <b>{formatDate(exp.date)}</b>
+              </dt>
+              <dd className='self-end'>{exp.topic}</dd>
+            </div>
+          )
+        })}
       </BoxBody>
     </div>
   )
