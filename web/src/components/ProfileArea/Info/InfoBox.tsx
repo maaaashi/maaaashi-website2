@@ -3,6 +3,7 @@ import { AboutMe } from './AboutMe'
 import { Experience } from './Experience'
 import { Skill } from './Skill'
 import axios from 'axios'
+import { Tab } from '../../../domains/Tab'
 
 interface Info {
   aboutme: {
@@ -12,13 +13,6 @@ interface Info {
 }
 
 export const InfoBox = () => {
-  class Tab {
-    constructor(
-      public id: number,
-      public title: string,
-      public component: ReactNode,
-    ) {}
-  }
   const getInfo = async () => {
     const { data } = await axios.get('/api/info.json')
     setInfo(data.info)
