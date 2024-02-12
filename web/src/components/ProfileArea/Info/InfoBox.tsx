@@ -1,18 +1,17 @@
-import { useState, type ReactNode, type FC } from 'react'
+import { useState, type ReactNode, type FC, useEffect } from 'react'
 import { AboutMe } from './AboutMe'
 import { Experience } from './Experience'
 import { Skill } from './Skill'
+import axios from 'axios'
 
-interface Props {
-  info: {
-    aboutme: {
-      text: string
-    }
-    experience: { date: string; topic: string }[]
+interface Info {
+  aboutme: {
+    text: string
   }
+  experience: { date: string; topic: string }[]
 }
 
-export const InfoBox: FC<Props> = ({ info }) => {
+export const InfoBox = () => {
   class Tab {
     constructor(
       public id: number,
@@ -20,12 +19,32 @@ export const InfoBox: FC<Props> = ({ info }) => {
       public component: ReactNode,
     ) {}
   }
-  const tabs = [
-    new Tab(0, 'ABOUT ME', <AboutMe aboutme={info.aboutme} />),
-    new Tab(1, 'EXPERIENCE', <Experience experience={info.experience} />),
-    new Tab(2, 'SKILL', <Skill />),
-  ]
-  const [activeTab, setActiveTab] = useState<Tab>(tabs[0])
+  const getInfo = async () => {
+    const { data } = await axios.get('/api/info.json')
+    setInfo(data.info)
+
+    setTabs([
+      new Tab(0, 'ABOUT ME', <AboutMe aboutme={data.info.aboutme} />),
+      new Tab(
+        1,
+        'EXPERIENCE',
+        <Experience experience={data.info.experience} />,
+      ),
+      new Tab(2, 'SKILL', <Skill />),
+    ])
+    setActiveTab(
+      new Tab(0, 'ABOUT ME', <AboutMe aboutme={data.info.aboutme} />),
+    )
+  }
+  const [info, setInfo] = useState<Info>()
+  const [tabs, setTabs] = useState<Tab[]>([])
+  const [activeTab, setActiveTab] = useState<Tab>()
+
+  useEffect(() => {
+    getInfo()
+  }, [])
+
+  if (!info || !activeTab) return <>loading...</>
 
   return (
     <div>

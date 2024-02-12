@@ -1,17 +1,28 @@
-import type { FC } from 'react'
+import { useEffect, type FC, useState } from 'react'
 import { BoxTitle } from '../BoxTitle'
 import { ProfileItem } from './ProfileItem'
+import axios from 'axios'
 
-interface Props {
-  profile: {
-    name: string
-    age: string
-    job: string
-    email: string
-  }
+interface Profile {
+  name: string
+  age: string
+  job: string
+  email: string
 }
 
-export const ProfileBox: FC<Props> = ({ profile }) => {
+export const ProfileBox = () => {
+  const getProfile = async () => {
+    const { data } = await axios.get('/api/profile.json')
+    setProfile(data.profile)
+  }
+
+  const [profile, setProfile] = useState<Profile>()
+  useEffect(() => {
+    getProfile()
+  }, [])
+
+  if (!profile) return <>loading...</>
+
   return (
     <div className='p-4 bg-base-100 rounded-lg flex flex-col gap-4'>
       <BoxTitle text='Profile' />

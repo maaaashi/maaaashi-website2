@@ -3,10 +3,6 @@ import { InfoBox } from './ProfileArea/Info/InfoBox'
 import { ProfileBox } from './ProfileArea/Profile/ProfileBox'
 import { TableOfContent } from './ProfileArea/TableOfContent'
 import axios from 'axios'
-
-const { profile, info } = (
-  await axios.get('http://localhost:4321/api/profile-area.json')
-).data
 ---
 
 <div class='mockup-window border bg-base-300 hidden md:block'>
@@ -15,8 +11,8 @@ const { profile, info } = (
       <TableOfContent />
     </div>
     <div class='min-w-96 flex flex-col gap-4'>
-      <ProfileBox profile={profile} client:load />
-      <InfoBox client:load info={info} />
+      <ProfileBox client:load />
+      <InfoBox client:load  />
     </div>
   </div>
 </div>
@@ -26,9 +22,9 @@ const { profile, info } = (
     <div
       class='artboard artboard-demo phone-1 p-2 pt-12 block overflow-y-auto overflow-x-hidden bg-base-200'
     >
-      <ProfileBox profile={profile} client:load />
+      <ProfileBox client:load />
       <div class='mt-4 md:m-0'>
-        <InfoBox client:load info={info} />
+        <!-- <InfoBox client:load info={info} /> -->
       </div>
     </div>
   </div>
