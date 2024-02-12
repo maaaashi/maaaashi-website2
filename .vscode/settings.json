@@ -5,6 +5,6 @@
     "*.spec": "gauge",
     "*.cpt": "gauge"
   },
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "onFocusChange",
   "files.autoSaveDelay": 500
 }
