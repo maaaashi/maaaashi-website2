@@ -1,15 +1,14 @@
 import { useState, type ReactNode } from 'react'
-import { BoxTitle } from './BoxTitle'
-import { AboutMe } from './info/AboutMe'
-import { Experience } from './info/Experience'
-import { Skill } from './info/Skill'
+import { AboutMe } from './AboutMe'
+import { Experience } from './Experience'
+import { Skill } from './Skill'
 
 export const InfoBox = () => {
   class Tab {
     constructor(
       public id: number,
       public title: string,
-      public component: ReactNode
+      public component: ReactNode,
     ) {}
   }
   const tabs = [

@@ -1,8 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Top from '../components/Top.astro';
+import Layout from '../layouts/Layout.astro'
+import LogoReveal from '../components/LogoReveal.svelte'
+import TextReveal from '../components/TextReveal.svelte'
+import ProfileArea from '../components/ProfileArea.astro'
+import Experience from '../components/Experience.astro'
+import Skill from '../components/Skill.astro'
+import Activities from '../components/Activities.astro'
 ---
 
 <Layout title="Maaaashi's Website">
-    <Top />
+  <main>
+    {process.env.NODE_ENV !== 'development' && <LogoReveal client:load />}
+
+    <div class='flex flex-col lg:flex-row items-center lg:items-start'>
+      <div class='flex-1'>
+        <p>
+          <TextReveal
+            client:load
+            text='Thank you for visiting our site. It is currently under development. Please check back soon for updates.'
+            duration='3000'
+          />
+        </p>
+        <p>
+          <TextReveal
+            client:load
+            text='サイトを見つけてくれてありがとうございます。このサイトは現在開発中のため、もう少し経ってから再度見に来てください。'
+            duration='3000'
+          />
+        </p>
+      </div>
+      <div class='p-4 pt-12'>
+        <ProfileArea />
+      </div>
+    </div>
+    <Experience />
+    <Skill />
+    <Activities />
+  </main>
 </Layout>

@@ -1,12 +1,17 @@
-import { BoxTitle } from './BoxTitle'
+import type { FC } from 'react'
+import { BoxTitle } from '../BoxTitle'
 import { ProfileItem } from './ProfileItem'
 
-export const ProfileBox = () => {
-  const myAge = Math.abs(
-    new Date(
-      new Date().getTime() - new Date('1996-07-23').getTime()
-    ).getUTCFullYear() - 1970
-  )
+interface Props {
+  profile: {
+    name: string
+    age: string
+    job: string
+    email: string
+  }
+}
+
+export const ProfileBox: FC<Props> = ({ profile }) => {
   return (
     <div className='p-4 bg-base-100 rounded-lg flex flex-col gap-4'>
       <BoxTitle text='Profile' />
@@ -19,24 +24,24 @@ export const ProfileBox = () => {
         <dl>
           <ProfileItem
             definitionTerm='Name'
-            definitionDescription='大岡 正志 / Masashi Ooka'
+            definitionDescription={profile.name}
           />
           <ProfileItem
             definitionTerm='Age'
-            definitionDescription={myAge.toString()}
+            definitionDescription={profile.age}
           />
           <ProfileItem
             definitionTerm='Job'
-            definitionDescription='Web Application Engineer'
+            definitionDescription={profile.job}
           />
           <ProfileItem
             definitionTerm='Email'
             definitionDescription={
               <a
-                href='mailto:ooka.ms.0r7e2p3@gmail.com'
+                href={`mailto:${profile.email}`}
                 className='underline text-info'
               >
-                ooka.ms.0r7e2p3@gmail.com
+                {profile.email}
               </a>
             }
           />

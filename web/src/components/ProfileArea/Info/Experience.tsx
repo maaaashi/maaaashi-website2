@@ -1,7 +1,5 @@
-import React from 'react'
 import { BoxTitle } from '../BoxTitle'
 import { BoxBody } from '../BoxBody'
-import { ProfileItem } from '../ProfileItem'
 
 export const Experience = () => {
   return (
