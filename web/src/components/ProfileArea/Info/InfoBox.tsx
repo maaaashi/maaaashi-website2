@@ -8,7 +8,7 @@ interface Props {
     aboutme: {
       text: string
     }
-    experience: { date: Date; topic: string }[]
+    experience: { date: string; topic: string }[]
   }
 }
 
