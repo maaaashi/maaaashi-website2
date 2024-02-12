@@ -14,8 +14,8 @@ const profile = (await axios.get('http://localhost:4321/api/profile-area.json'))
       <TableOfContent />
     </div>
     <div class='min-w-96 flex flex-col gap-4'>
-      <ProfileBox profile={profile} />
-      <InfoBox />
+      <ProfileBox profile={profile} client:load />
+      <InfoBox client:load />
     </div>
   </div>
 </div>
@@ -25,9 +25,9 @@ const profile = (await axios.get('http://localhost:4321/api/profile-area.json'))
     <div
       class='artboard artboard-demo phone-1 p-2 pt-12 block overflow-y-auto overflow-x-hidden bg-base-200'
     >
-      <ProfileBox profile={profile} />
+      <ProfileBox profile={profile} client:load />
       <div class='mt-4 md:m-0'>
-        <InfoBox />
+        <InfoBox client:load />
       </div>
     </div>
   </div>
