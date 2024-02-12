@@ -2,7 +2,6 @@
 import { InfoBox } from './ProfileArea/Info/InfoBox'
 import { ProfileBox } from './ProfileArea/Profile/ProfileBox'
 import { TableOfContent } from './ProfileArea/TableOfContent'
-import axios from 'axios'
 ---
 
 <div class='mockup-window border bg-base-300 hidden md:block'>
@@ -24,7 +23,7 @@ import axios from 'axios'
     >
       <ProfileBox client:load />
       <div class='mt-4 md:m-0'>
-        <!-- <InfoBox client:load info={info} /> -->
+        <InfoBox client:load />
       </div>
     </div>
   </div>
