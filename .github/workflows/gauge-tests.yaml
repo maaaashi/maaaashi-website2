@@ -24,7 +24,7 @@ jobs:
           npm i
           npx playwright install 
           npm run test
-        with:
+        env:
           QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
       - name: Deploy to Vercel
         if: success()
