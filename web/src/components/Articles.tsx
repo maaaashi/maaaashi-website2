@@ -3,17 +3,17 @@ import { Card } from './Card'
 import { useEffect, useState } from 'react'
 
 export const Articles = () => {
-  const getArticles = async () => {
-    const { data } = await axios.get('/api/articles.json')
+  // const getArticles = async () => {
+  //   const { data } = await axios.get('/api/articles.json')
 
-    setArticles(data.profile)
-  }
+  //   setArticles(data.profile)
+  // }
 
-  const [articles, setArticles] = useState<any[]>()
+  // const [articles, setArticles] = useState<any[]>()
 
-  useEffect(() => {
-    getArticles()
-  }, [])
+  // useEffect(() => {
+  //   getArticles()
+  // }, [])
 
   return <Card />
 }
