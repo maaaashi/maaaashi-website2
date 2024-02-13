@@ -1,12 +1,6 @@
 import type { APIRoute } from 'astro'
 
 export const GET: APIRoute = async () => {
-  const myAge = Math.abs(
-    new Date(
-      new Date().getTime() - new Date('1996-07-23').getTime(),
-    ).getUTCFullYear() - 1970,
-  )
-
   return new Response(
     JSON.stringify({
       info: {
