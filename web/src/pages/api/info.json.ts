@@ -31,6 +31,30 @@ export const GET: APIRoute = async () => {
             topic: '株式会社ユーザベース 入社',
           },
         ],
+        skills: [
+          { category: 'Frontend', items: ['HTML', 'CSS', 'JavaScript'] },
+          {
+            category: 'JaveScript',
+            items: [
+              'Typescript',
+              'Next.js',
+              'React',
+              'VueJS',
+              'SvelteKit',
+              'Svelte',
+            ],
+          },
+          {
+            category: 'Backend',
+            items: ['Ruby', 'RubyOnRails', 'NestJS', 'GraphQL'],
+          },
+        ],
+        qualifications: [
+          {
+            date: new Date('2020-03-31'),
+            topic: 'AWS Solution Artitect Associate',
+          },
+        ],
       },
     }),
   )

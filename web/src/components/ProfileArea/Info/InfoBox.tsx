@@ -3,42 +3,68 @@ import { AboutMe } from './AboutMe'
 import { Experience } from './Experience'
 import { Skill } from './Skill'
 import axios from 'axios'
-import { Tab } from '../../../domains/Tab'
 
 interface Info {
-  aboutme: {
-    text: string
+  info: {
+    aboutme: {
+      text: string
+    }
+    experience: { date: string; topic: string }[]
+    skills: { category: string; items: string[] }[]
+    qualifications: { date: string; topic: string }[]
   }
-  experience: { date: string; topic: string }[]
+}
+
+type Tab = {
+  id: number
+  title: string
+  component: ReactNode
 }
 
 export const InfoBox = () => {
   const getInfo = async () => {
-    const { data } = await axios.get('/api/info.json')
-    setInfo(data.info)
+    const { data } = await axios.get<Info>('/api/info.json')
 
     setTabs([
-      new Tab(0, 'ABOUT ME', <AboutMe aboutme={data.info.aboutme} />),
-      new Tab(
-        1,
-        'EXPERIENCE',
-        <Experience experience={data.info.experience} />,
-      ),
-      new Tab(2, 'SKILL', <Skill />),
+      {
+        id: 0,
+        title: 'ABOUT ME',
+        component: <AboutMe aboutme={data.info.aboutme} />,
+      },
+      {
+        id: 1,
+        title: 'EXPERIENCE',
+        component: <Experience experience={data.info.experience} />,
+      },
+      {
+        id: 2,
+        title: 'SKILL',
+        component: (
+          <Skill
+            skills={data.info.skills}
+            qualifications={data.info.qualifications}
+          />
+        ),
+      },
     ])
-    setActiveTab(
-      new Tab(0, 'ABOUT ME', <AboutMe aboutme={data.info.aboutme} />),
-    )
+    setActiveTab({
+      id: 0,
+      title: 'ABOUT ME',
+      component: <AboutMe aboutme={data.info.aboutme} />,
+    })
+
+    setIsLoading(false)
   }
-  const [info, setInfo] = useState<Info>()
+
   const [tabs, setTabs] = useState<Tab[]>([])
   const [activeTab, setActiveTab] = useState<Tab>()
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     getInfo()
   }, [])
 
-  if (!info || !activeTab) return <>loading...</>
+  if (isLoading) return <>loading...</>
 
   return (
     <div>
@@ -46,7 +72,7 @@ export const InfoBox = () => {
         {tabs.map((tab) => (
           <button
             className={`tab tab-border-none ${
-              activeTab.id === tab.id && 'tab-active bg-base-100'
+              activeTab!.id === tab.id && 'tab-active bg-base-100'
             }`}
             key={`tab_${tab.id}`}
             onClick={() => setActiveTab(tab)}
@@ -57,10 +83,10 @@ export const InfoBox = () => {
       </div>
       <div
         className={`p-4 bg-base-100 rounded-lg ${
-          activeTab.id === 0 && 'rounded-tl-none'
-        } ${activeTab.id === tabs.length - 1 && 'rounded-tr-none'}`}
+          activeTab!.id === 0 && 'rounded-tl-none'
+        } ${activeTab!.id === tabs.length - 1 && 'rounded-tr-none'}`}
       >
-        <div className='md:w-80'>{activeTab.component}</div>
+        <div className='md:w-80'>{activeTab!.component}</div>
       </div>
     </div>
   )
