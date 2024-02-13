@@ -24,6 +24,8 @@ jobs:
           npm i
           npx playwright install 
           npm run test
+        with:
+          QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
       - name: Deploy to Vercel
         if: success()
         uses: amondnet/vercel-action@v20
