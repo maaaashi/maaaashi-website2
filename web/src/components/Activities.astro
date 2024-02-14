@@ -3,22 +3,22 @@ import { Articles } from './Activities/Articles'
 import { FaGithub, FaHeart } from 'react-icons/fa'
 ---
 
-<div class='bg-base-300'>
+<div class='bg-base-300 flex flex-col gap-4'>
   <h2 class='font-bold text-2xl p-4' id='Activities'>Activities</h2>
   <section class='w-full px-10' id='activities'>
     <h3 class='font-bold text-xl mb-2 flex items-center gap-2' id='Activities'>
       <FaGithub />Github
     </h3>
-    <div class='flex gap-4 items-start'>
-      <img
-        alt='Top Langs'
-        height='150px'
-        src='https://github-readme-stats.vercel.app/api/top-langs/?username=maaaashi&layout=compact&theme=onedark'
-      />
+    <div class='flex gap-4 items-start flex-col md:flex-row'>
       <img
         alt='github stats'
         height='150px'
         src='https://github-readme-stats.vercel.app/api?username=maaaashi&show_icons=true&theme=onedark'
+      />
+      <img
+        alt='Top Langs'
+        height='150px'
+        src='https://github-readme-stats.vercel.app/api/top-langs/?username=maaaashi&layout=compact&theme=onedark'
       />
     </div>
   </section>
