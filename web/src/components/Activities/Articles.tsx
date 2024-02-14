@@ -15,17 +15,19 @@ export const Articles = () => {
   useEffect(() => {
     getArticles()
   }, [])
-
-  if (!articles) return <>Loading...</>
+  return <Card />
+  if (!articles) return <Card />
 
   return (
     <>
       {articles.map((article) => (
         <Card
           key={article.id}
-          title={article.title}
-          likes={+article.likes_count}
-          stocks={+article.stocks_count}
+          article={{
+            title: article.title,
+            likes: +article.likes_count,
+            stocks: +article.stocks_count,
+          }}
         />
       ))}
     </>
