@@ -1,8 +1,7 @@
 import type { APIRoute } from 'astro'
 import axios from 'axios'
 
-export const GET: APIRoute = async ({ params }) => {
-  console.log(params)
+export const GET: APIRoute = async () => {
   const qiitaToken = import.meta.env.QIITA_TOKEN
   let page = 1
   let articles: any[] = []

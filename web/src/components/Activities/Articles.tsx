@@ -16,5 +16,17 @@ export const Articles = () => {
     getArticles()
   }, [])
 
-  return <Card />
+  if (!articles) return <>Loading...</>
+
+  return (
+    <>
+      {articles.map((article) => (
+        <Card
+          title={article.title}
+          likes={+article.likes_count}
+          stocks={+article.stocks_count}
+        />
+      ))}
+    </>
+  )
 }
