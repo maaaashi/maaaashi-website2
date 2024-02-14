@@ -10,3 +10,7 @@
     transform: translateY(0);
   }
 }
+
+* {
+  overscroll-behavior: none;
+}
