@@ -11,15 +11,21 @@ export const GET: APIRoute = async () => {
   //   },
   // )
   const qiitaToken = import.meta.env.QIITA_TOKEN
+  let page = 1
+  let articles = []
   const response = await axios(
-    'https://qiita.com/api/v2/authenticated_user/items?per_page=100',
+    'https://qiita.com/api/v2/authenticated_user/items?page=1&per_page=100',
     {
       headers: {
         Authorization: `Bearer ${qiitaToken}`,
       },
     },
   )
-  console.log(response.headers['total-count'])
+  console.log(response.headers['link'].split(','))
+  console.log(
+    response.headers['link'].split(',')[0].split(';')[1].trim() ===
+      'rel="next"',
+  )
   // const articles = await response.data()
   return new Response(
     JSON.stringify({
