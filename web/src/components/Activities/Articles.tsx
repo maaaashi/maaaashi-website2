@@ -15,7 +15,7 @@ export const Articles = () => {
   useEffect(() => {
     getArticles()
   }, [])
-  return <Card />
+
   if (!articles) return <Card />
 
   return (

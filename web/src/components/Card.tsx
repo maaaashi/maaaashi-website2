@@ -14,8 +14,8 @@ export const Card: FC<Props> = ({ article }) => {
   if (!article)
     return (
       <div className='min-w-96 w-96 card glass'>
-        <figure>
-          <div className='skeleton h-48 w-full'></div>
+        <figure className='p-4'>
+          <div className='skeleton h-[185px] w-[350px]'></div>
         </figure>
         <div className='card-body'>
           <div className='card-title justify-end'>
@@ -23,13 +23,17 @@ export const Card: FC<Props> = ({ article }) => {
               <dt>
                 <CiHeart />
               </dt>
-              <dd>0</dd>
+              <dd>
+                <div className='skeleton h-4 w-4'></div>
+              </dd>
             </dl>
             <dl className='flex items-center gap-2'>
               <dt>
                 <CiBookmark />
               </dt>
-              <dd>0</dd>
+              <dd>
+                <div className='skeleton h-4 w-4'></div>
+              </dd>
             </dl>
           </div>
         </div>
