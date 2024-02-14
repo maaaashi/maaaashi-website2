@@ -22,6 +22,7 @@ export const Articles = () => {
     <>
       {articles.map((article) => (
         <Card
+          key={article.id}
           title={article.title}
           likes={+article.likes_count}
           stocks={+article.stocks_count}
