@@ -7,6 +7,15 @@ export default {
         'slide-down': 'slideDown 1s ease-out',
         'slide-down-2s': 'slideDown 2s ease-out',
       },
+      height: {
+        screen: ['100vh', '100dvh'],
+      },
+      minHeight: {
+        screen: ['100vh', '100dvh'],
+      },
+      maxHeight: {
+        screen: ['100vh', '100dvh'],
+      },
     },
   },
   daisyui: {
