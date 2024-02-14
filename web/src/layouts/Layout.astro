@@ -1,35 +1,35 @@
 ---
-import "../global.css"
+import '../global.css'
 import Header from '../components/Header.tsx'
 import '@fontsource/zen-kaku-gothic-new'
 
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="ja" data-theme="light">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="bg-base-50 h-screen overflow-hidden flex flex-col">
-		<Header client:load/>
-		<div class="flex-1 overflow-y-auto">
-			<slot />
-		</div>
-	</body>
-	
-	<style>
-		* {
-			font-family: 'Zen Kaku Gothic New', sans-serif;
-		}
-	</style>
+<html lang='ja' data-theme='light'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class='bg-base-50 h-screen overflow-hidden flex flex-col'>
+    <Header client:load />
+    <div class='flex-1 overflow-y-auto'>
+      <slot />
+    </div>
+  </body>
+
+  <style>
+    * {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+    }
+  </style>
 </html>
