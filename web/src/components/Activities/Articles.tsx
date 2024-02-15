@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Card } from '../Card'
+import { Card } from './Card'
 import { useEffect, useState } from 'react'
 
 export const Articles = () => {
@@ -27,6 +27,7 @@ export const Articles = () => {
             title: article.title,
             likes: +article.likes_count,
             stocks: +article.stocks_count,
+            link: article.url,
           }}
         />
       ))}

@@ -1,5 +1,5 @@
 import { CiBookmark, CiHeart } from 'react-icons/ci'
-import { QiitaCard } from './Activities/QiitaCard'
+import { QiitaCard } from './QiitaCard'
 import type { FC } from 'react'
 
 interface Props {
@@ -7,6 +7,7 @@ interface Props {
     title: string
     likes: number
     stocks: number
+    link: string
   }
 }
 
@@ -42,10 +43,7 @@ export const Card: FC<Props> = ({ article }) => {
   return (
     <div className='min-w-96 w-96 card glass'>
       <figure>
-        <a
-          href='https://qiita.com/maaaashi/items/43210e781f657777fe56'
-          target='_blank'
-        >
+        <a href={article.link} target='_blank'>
           <QiitaCard title={article.title} />
         </a>
       </figure>
