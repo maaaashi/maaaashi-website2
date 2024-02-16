@@ -1,6 +1,7 @@
 import { CiBookmark, CiHeart } from 'react-icons/ci'
 import { QiitaCard } from './QiitaCard'
 import type { FC } from 'react'
+import { FaBookmark, FaHeart } from 'react-icons/fa'
 
 interface Props {
   article?: {
@@ -16,12 +17,12 @@ export const Card: FC<Props> = ({ article }) => {
     return (
       <div className='min-w-96 w-96 card glass'>
         <figure className='p-4'>
-          <div className='skeleton h-[185px] w-[350px]'></div>
+          <div className='skeleton h-[175px] w-[350px]'></div>
         </figure>
         <div className='card-body'>
           <div className='card-title justify-end'>
             <dl className='flex items-center gap-2'>
-              <dt>
+              <dt className='text-red-300'>
                 <CiHeart />
               </dt>
               <dd>
@@ -41,7 +42,7 @@ export const Card: FC<Props> = ({ article }) => {
       </div>
     )
   return (
-    <div className='min-w-96 w-96 card glass'>
+    <div className='min-w-96 w-96 card glass hover:brightness-90 '>
       <figure>
         <a href={article.link} target='_blank'>
           <QiitaCard title={article.title} />
@@ -50,14 +51,14 @@ export const Card: FC<Props> = ({ article }) => {
       <div className='card-body'>
         <div className='card-title justify-end'>
           <dl className='flex items-center gap-2'>
-            <dt>
-              <CiHeart />
+            <dt className='text-red-300'>
+              <FaHeart />
             </dt>
             <dd>{article.likes}</dd>
           </dl>
           <dl className='flex items-center gap-2'>
-            <dt>
-              <CiBookmark />
+            <dt className='text-lime-700'>
+              <FaBookmark />
             </dt>
             <dd>{article.stocks}</dd>
           </dl>
