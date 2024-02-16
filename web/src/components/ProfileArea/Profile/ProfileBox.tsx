@@ -26,7 +26,7 @@ export const ProfileBox = () => {
   return (
     <div className='p-4 bg-base-100 rounded-lg flex flex-col gap-4'>
       <BoxTitle text='Profile' />
-      <div className='flex gap-2 flex-col lg:flex-row items-center'>
+      <div className='flex gap-2 flex-col lg:flex-row lg:justify-center items-center'>
         <div className='avatar'>
           <div className='w-24 rounded-xl'>
             <img src='/profile.JPG' alt='IMAGE' />

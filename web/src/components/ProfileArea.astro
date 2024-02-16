@@ -2,28 +2,34 @@
 import { InfoBox } from './ProfileArea/Info/InfoBox'
 import { ProfileBox } from './ProfileArea/Profile/ProfileBox'
 import { TableOfContent } from './ProfileArea/TableOfContent'
+import { AreaHeader } from './AreaHeader'
 ---
 
-<div class='mockup-window border bg-base-300 hidden md:block'>
-  <div class='flex px-4 py-4 bg-base-200 gap-4'>
-    <div class='min-w-40 bg-base-100 rounded-lg p-2'>
-      <TableOfContent />
+<div class='relative'>
+  <AreaHeader text='Profile' bgColor='bg-base-100' />
+  <div class='flex justify-center p-10'>
+    <div class='mockup-window border bg-base-300 hidden md:block'>
+      <div class='flex px-4 py-4 bg-base-200 gap-4'>
+        <div class='min-w-40 bg-base-100 rounded-lg p-2'>
+          <TableOfContent />
+        </div>
+        <div class='min-w-96 w-[700px] flex flex-col gap-4'>
+          <ProfileBox client:load />
+          <InfoBox client:load />
+        </div>
+      </div>
     </div>
-    <div class='min-w-96 flex flex-col gap-4'>
-      <ProfileBox client:load />
-      <InfoBox client:load  />
-    </div>
-  </div>
-</div>
-<div class='mockup-phone block md:hidden'>
-  <div class='camera'></div>
-  <div class='display'>
-    <div
-      class='artboard artboard-demo phone-1 p-2 pt-12 block overflow-y-auto overflow-x-hidden bg-base-200'
-    >
-      <ProfileBox client:load />
-      <div class='mt-4 md:m-0'>
-        <InfoBox client:load />
+    <div class='mockup-phone block md:hidden'>
+      <div class='camera'></div>
+      <div class='display'>
+        <div
+          class='artboard artboard-demo phone-1 p-2 pt-12 block overflow-y-auto overflow-x-hidden bg-base-200'
+        >
+          <ProfileBox client:load />
+          <div class='mt-4 md:m-0'>
+            <InfoBox client:load />
+          </div>
+        </div>
       </div>
     </div>
   </div>
