@@ -3,11 +3,11 @@ import { Skill as SkillComponent } from './Skill/index.tsx'
 import { Qualifications } from './Skill/Qualifications.tsx'
 ---
 
-<div class='p-4'>
+<div class='p-4 flex flex-col gap-4'>
   <h2 class='font-bold text-2xl' id='Skill'>Skill - スキル</h2>
 
   <SkillComponent />
-  <h2 class='font-bold text-2xl' id='Skill'>QUALIFICATION - 資格</h2>
+  <h2 class='font-bold text-2xl' id='Skill'>Qualifications - 資格</h2>
 
   <Qualifications client:load />
 </div>

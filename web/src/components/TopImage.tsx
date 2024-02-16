@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const TopImage = () => {
   return (
     <>
@@ -8,7 +6,7 @@ export const TopImage = () => {
       </div>
       <div className='w-full h-screen relative'>
         <span className='mb-4 text-3xl font-extrabold text-gray-400 dark:text-white md:text-5xl lg:text-6xl left-12 top-1/2 -translate-y-12 absolute'>
-          This is
+          {'This is '}
           <span className='text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400'>
             Maaaashi's Website
           </span>

@@ -5,8 +5,9 @@ export const GET: APIRoute = async () => {
     JSON.stringify({
       qualifications: [
         {
-          date: new Date('2020-03-31'),
+          date: new Date('2023-06-04'),
           topic: 'AWS Solution Artitect Associate',
+          imageUrl: '/aws-saa.png',
         },
       ],
     }),

@@ -1,15 +1,15 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type Qualifications = {
-  date: Date
+  date: string
   topic: string
+  imageUrl: string
 }
 
 export const Qualifications = () => {
   const getQualifications = async () => {
     const { data } = await axios.get('/api/qualifications.json')
-    console.log(data)
     setQualifications(data.qualifications)
   }
 
@@ -18,12 +18,16 @@ export const Qualifications = () => {
     getQualifications()
   }, [])
 
-  if (!qualifications) return <>loading...</>
+  if (!qualifications) return <div className='skeleton h-40 w-40'></div>
 
   return (
-    <div>
+    <div className='flex gap-10 p-10'>
       {qualifications.map((q, index) => (
-        <div key={index}>{q.topic}</div>
+        <div key={index} className='flex flex-col items-center'>
+          <img src={q.imageUrl} alt='' className='h-40 w-40' />
+          <div>{q.topic}</div>
+          <div>{new Date(q.date).toLocaleDateString()}</div>
+        </div>
       ))}
     </div>
   )
