@@ -21,5 +21,16 @@ export default {
   daisyui: {
     themes: ['light', 'dark'],
   },
-  plugins: [require('daisyui')],
+  plugins: [
+    require('daisyui'),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-shadow': {
+          textShadow: '5px 5px #558abb',
+        },
+      }
+
+      addUtilities(newUtilities)
+    },
+  ],
 }
