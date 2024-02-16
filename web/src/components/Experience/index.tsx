@@ -18,6 +18,9 @@ export const Experience = () => {
     getExperience()
   }, [])
 
+  const formatDate = (date: string) =>
+    `${(new Date(date).getMonth() + 1).toString().padStart(2, '0')}, ${new Date(date).getFullYear()}`
+
   if (!experience)
     return (
       <ul className='timeline timeline-snap-icon max-md:timeline-compact timeline-vertical'>
@@ -76,7 +79,7 @@ export const Experience = () => {
                   <img src='/point.svg' className='h-5 w-5' />
                 </div>
                 <div className='timeline-end mb-10'>
-                  <time className='font-mono italic'>{e.date}</time>
+                  <time className='font-mono italic'>{formatDate(e.date)}</time>
                   <div className='text-lg font-black'>{e.topic}</div>
                   {e.content}
                 </div>
@@ -93,12 +96,7 @@ export const Experience = () => {
                   <img src='/point.svg' className='h-5 w-5' />
                 </div>
                 <div className='timeline-start md:text-end mb-10'>
-                  <time className='font-mono italic'>
-                    {(new Date(e.date).getMonth() + 1)
-                      .toString()
-                      .padStart(2, '0')}
-                    , {new Date().getFullYear()}
-                  </time>
+                  <time className='font-mono italic'>{formatDate(e.date)}</time>
                   <div className='text-lg font-black'>{e.topic}</div>
                   {e.content}
                 </div>
