@@ -15,7 +15,7 @@ interface Props {
 export const Card: FC<Props> = ({ article }) => {
   if (!article)
     return (
-      <div className='min-w-96 w-96 card glass'>
+      <div className='min-w-72 w-6min-w-72 md:min-w-96 md:w-96 card glass'>
         <figure className='p-4'>
           <div className='skeleton h-[175px] w-[350px]'></div>
         </figure>
@@ -42,7 +42,7 @@ export const Card: FC<Props> = ({ article }) => {
       </div>
     )
   return (
-    <div className='min-w-96 w-96 card glass hover:brightness-90 '>
+    <div className='min-w-72 w-6min-w-72 md:min-w-96 md:w-96 card glass md:hover:brightness-90 '>
       <figure>
         <a href={article.link} target='_blank'>
           <QiitaCard title={article.title} />
