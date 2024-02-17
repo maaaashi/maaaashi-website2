@@ -8,6 +8,7 @@
 <!-- <a href="https://github.com/maaaashi/maaaashi-website2/actions/workflows/module-tests.yaml" rel="nofollow">
   <img src="https://github.com/maaaashi/maaaashi-website2/actions/workflows/module-tests.yaml/badge.svg" alt="Module Tests">
 </a> -->
+
 <a href="https://github.com/maaaashi/maaaashi-website2/actions/workflows/gauge-tests.yaml" rel="nofollow">
   <img src="https://github.com/maaaashi/maaaashi-website2/actions/workflows/gauge-tests.yaml/badge.svg" alt="Gauge E2E Tests">
 </a>
@@ -22,6 +23,9 @@
 - [Development](#development)
   - [Start Server](#start-server)
   - [E2E](#e2e)
+- [Environment](#environment)
+  - [Web](#web)
+  - [E2E](#e2e-1)
 
 # Development
 
@@ -46,3 +50,31 @@ $ cd e2e/
 $ npm install
 $ npm run test
 ```
+
+# Environment
+
+## Web
+
+|Language/Framework/Tool|Version|
+|----|----|
+|Astro|4.2.4|
+|React|18.2.0|
+|React-DOM|18.2.0|
+|Svelte|4.2.9|
+|TailwindCSS|3.4.1|
+|TypeScript|5.3.3|
+|Axios|1.6.7|
+|DaisyUI|4.6.0|
+|Theme-Change|2.5.0|
+|Astro-icon|1.0.4|
+|React-icons|5.0.1|
+
+## E2E
+
+|Language/Framework/Tool|Version|
+|----|----|
+|gauge-ts|0.1.1|
+|ts-node|10.4.0|
+|TypeScript|4.4.4|
+|@playwright/test|1.41.2|
+|@types/node|latest|
