@@ -16,7 +16,8 @@ export default class Top {
 
   @Step('<text>というボタンが表示されていること')
   public async checkButtonDisplay(text: string) {
-    const target = page.getByRole('button', { name: text })
+    const reg = new RegExp(`^${text}$`)
+    const target = page.getByRole('button', { name: reg })
     await expect(target).toBeVisible()
   }
 
