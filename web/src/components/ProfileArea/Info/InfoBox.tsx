@@ -28,7 +28,7 @@ export const InfoBox = () => {
     setTabs([
       {
         id: 0,
-        title: 'ABOUT ME',
+        title: 'ME',
         component: <AboutMe aboutme={data.info.aboutme} />,
       },
       {
@@ -49,7 +49,7 @@ export const InfoBox = () => {
     ])
     setActiveTab({
       id: 0,
-      title: 'ABOUT ME',
+      title: 'ME',
       component: <AboutMe aboutme={data.info.aboutme} />,
     })
 
