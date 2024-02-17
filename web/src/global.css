@@ -11,6 +11,26 @@
   }
 }
 
+.award {
+  animation-name: Award;
+  animation-duration: 3000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes Award {
+  0% {
+    box-shadow: rgba(81, 242, 203, 0) 0px 1px 1px 1px;
+  }
+
+  50% {
+    box-shadow: rgba(81, 242, 203, 0.5) 0px 0px 10px 1px;
+  }
+  100% {
+    box-shadow: rgba(81, 242, 203, 0) 0px 1px 1px 1px;
+  }
+}
+
 * {
   overscroll-behavior: none;
 }

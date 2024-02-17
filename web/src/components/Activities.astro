@@ -6,7 +6,7 @@ import { AreaHeader } from './AreaHeader'
 ---
 
 <div>
-  <AreaHeader text='Activities - 活動' bgColor='bg-base-300' />
+  <AreaHeader text='Activities - 活動' />
   <div class='bg-base-300 flex flex-col gap-10'>
     <section class='w-full px-10' id='activities'>
       <h3
@@ -15,20 +15,22 @@ import { AreaHeader } from './AreaHeader'
       >
         <FaGithub />Github
       </h3>
-      <div class='flex gap-4 items-start flex-col md:flex-row'>
+      <div
+        class='flex gap-4 flex-col lg:flex-row items-center lg:justify-center'
+      >
+        <img
+          alt='Top Langs'
+          class='w-96 lg:h-40 lg:w-auto'
+          src='https://github-readme-stats.vercel.app/api/top-langs/?username=maaaashi&layout=compact&theme=onedark'
+        />
         <img
           alt='github stats'
-          class='h-40'
+          class='w-96 lg:h-40 lg:w-auto'
           src='https://github-readme-stats.vercel.app/api?username=maaaashi&show_icons=true&theme=onedark'
         />
         <img
           alt='Top Langs'
-          class='h-40'
-          src='https://github-readme-stats.vercel.app/api/top-langs/?username=maaaashi&layout=compact&theme=onedark'
-        />
-        <img
-          alt='Top Langs'
-          class='h-40'
+          class='w-96 lg:h-40 lg:w-auto'
           src='https://streak-stats.demolab.com/?user=maaaashi&theme=onedark'
         />
       </div>
@@ -38,9 +40,9 @@ import { AreaHeader } from './AreaHeader'
         class='font-bold text-xl mb-2 flex items-center gap-2 px-10'
         id='Activities'
       >
-        <RiArticleFill />人気記事 Top 10
+        <RiArticleFill />人気記事 Top 3
       </h3>
-      <div class='flex gap-4 overflow-x-auto w-full'>
+      <div class='flex justify-center flex-wrap gap-4 w-full p-4'>
         <Articles client:load />
       </div>
     </section>

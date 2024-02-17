@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro'
 import axios from 'axios'
 
-export const GET: APIRoute = async () => {
+export const GET: APIRoute = async (hoge) => {
   const qiitaToken = import.meta.env.QIITA_TOKEN
   let page = 1
   let articles: any[] = []
@@ -41,7 +41,7 @@ export const GET: APIRoute = async () => {
           }
           return 1
         })
-        .slice(0, 10),
+        .slice(0, 3),
     }),
   )
 }

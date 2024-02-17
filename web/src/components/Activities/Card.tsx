@@ -1,4 +1,3 @@
-import { CiBookmark, CiHeart } from 'react-icons/ci'
 import { QiitaCard } from './QiitaCard'
 import type { FC } from 'react'
 import { FaBookmark, FaHeart } from 'react-icons/fa'
@@ -15,7 +14,7 @@ interface Props {
 export const Card: FC<Props> = ({ article }) => {
   if (!article)
     return (
-      <div className='min-w-72 w-6min-w-72 md:min-w-96 md:w-96 card glass'>
+      <div className='min-w-72 w-72 card glass'>
         <figure className='p-4'>
           <div className='skeleton h-[175px] w-[350px]'></div>
         </figure>
@@ -23,7 +22,7 @@ export const Card: FC<Props> = ({ article }) => {
           <div className='card-title justify-end'>
             <dl className='flex items-center gap-2'>
               <dt className='text-red-300'>
-                <CiHeart />
+                <FaHeart />
               </dt>
               <dd>
                 <div className='skeleton h-4 w-4'></div>
@@ -31,7 +30,7 @@ export const Card: FC<Props> = ({ article }) => {
             </dl>
             <dl className='flex items-center gap-2'>
               <dt>
-                <CiBookmark />
+                <FaBookmark />
               </dt>
               <dd>
                 <div className='skeleton h-4 w-4'></div>
@@ -42,7 +41,7 @@ export const Card: FC<Props> = ({ article }) => {
       </div>
     )
   return (
-    <div className='min-w-72 w-6min-w-72 md:min-w-96 md:w-96 card glass md:hover:brightness-90 '>
+    <div className='min-w-72 w-72 card glass md:hover:brightness-90 award'>
       <figure>
         <a href={article.link} target='_blank'>
           <QiitaCard title={article.title} />
