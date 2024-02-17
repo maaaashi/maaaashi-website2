@@ -1,4 +1,4 @@
-import { useEffect, type FC, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BoxTitle } from '../BoxTitle'
 import { ProfileItem } from './ProfileItem'
 import axios from 'axios'

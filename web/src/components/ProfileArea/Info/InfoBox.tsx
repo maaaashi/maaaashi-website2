@@ -1,4 +1,4 @@
-import { useState, type ReactNode, type FC, useEffect } from 'react'
+import { useState, type ReactNode, useEffect } from 'react'
 import { AboutMe } from './AboutMe'
 import { Experience } from './Experience'
 import { Skill } from './Skill'

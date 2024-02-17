@@ -1,4 +1,3 @@
-import React from 'react'
 import { GoLinkExternal } from 'react-icons/go'
 
 export const Panel = () => {

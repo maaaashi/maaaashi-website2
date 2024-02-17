@@ -5,8 +5,6 @@ import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import icon from 'astro-icon'
 
-import vercel from '@astrojs/vercel/serverless'
-
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind(), svelte(), vue(), icon()],
