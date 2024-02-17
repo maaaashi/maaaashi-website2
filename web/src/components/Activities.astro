@@ -5,40 +5,44 @@ import { RiArticleFill } from 'react-icons/ri'
 import { AreaHeader } from './AreaHeader'
 ---
 
-<div class='bg-base-300 flex flex-col gap-10'>
+<div>
   <AreaHeader text='Activities - 活動' bgColor='bg-base-300' />
-
-  <section class='w-full px-10' id='activities'>
-    <h3 class='font-bold text-xl mb-2 flex items-center gap-2' id='Activities'>
-      <FaGithub />Github
-    </h3>
-    <div class='flex gap-4 items-start flex-col md:flex-row'>
-      <img
-        alt='github stats'
-        class='h-40'
-        src='https://github-readme-stats.vercel.app/api?username=maaaashi&show_icons=true&theme=onedark'
-      />
-      <img
-        alt='Top Langs'
-        class='h-40'
-        src='https://github-readme-stats.vercel.app/api/top-langs/?username=maaaashi&layout=compact&theme=onedark'
-      />
-      <img
-        alt='Top Langs'
-        class='h-40'
-        src='https://streak-stats.demolab.com/?user=maaaashi&theme=onedark'
-      />
-    </div>
-  </section>
-  <section class='w-full' id='activities'>
-    <h3
-      class='font-bold text-xl mb-2 flex items-center gap-2 px-10'
-      id='Activities'
-    >
-      <RiArticleFill />人気記事 Top 10
-    </h3>
-    <div class='flex gap-4 overflow-x-auto w-full'>
-      <Articles client:load />
-    </div>
-  </section>
+  <div class='bg-base-300 flex flex-col gap-10'>
+    <section class='w-full px-10' id='activities'>
+      <h3
+        class='font-bold text-xl mb-2 flex items-center gap-2'
+        id='Activities'
+      >
+        <FaGithub />Github
+      </h3>
+      <div class='flex gap-4 items-start flex-col md:flex-row'>
+        <img
+          alt='github stats'
+          class='h-40'
+          src='https://github-readme-stats.vercel.app/api?username=maaaashi&show_icons=true&theme=onedark'
+        />
+        <img
+          alt='Top Langs'
+          class='h-40'
+          src='https://github-readme-stats.vercel.app/api/top-langs/?username=maaaashi&layout=compact&theme=onedark'
+        />
+        <img
+          alt='Top Langs'
+          class='h-40'
+          src='https://streak-stats.demolab.com/?user=maaaashi&theme=onedark'
+        />
+      </div>
+    </section>
+    <section class='w-full' id='activities'>
+      <h3
+        class='font-bold text-xl mb-2 flex items-center gap-2 px-10'
+        id='Activities'
+      >
+        <RiArticleFill />人気記事 Top 10
+      </h3>
+      <div class='flex gap-4 overflow-x-auto w-full'>
+        <Articles client:load />
+      </div>
+    </section>
+  </div>
 </div>

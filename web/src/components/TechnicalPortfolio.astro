@@ -3,12 +3,13 @@ import { AreaHeader } from './AreaHeader'
 import { Panel } from './TechnicalPortfolio/Panel.tsx'
 ---
 
-<div class='flex flex-col gap-4 bg-base-100'>
+<div>
   <AreaHeader text='Technical Portfolio' bgColor='bg-base-100' />
-
-  これまでの作品を紹介します。
-  <div class='flex lg:justify-around flex-col lg:flex-row'>
-    <Panel />
-    <Panel />
+  <div class='flex flex-col gap-4 bg-base-100 p-10'>
+    これまでの作品を紹介します。
+    <div class='flex flex-col items-center gap-4'>
+      <Panel />
+      <Panel />
+    </div>
   </div>
 </div>

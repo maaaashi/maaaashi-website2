@@ -6,7 +6,7 @@ export const Panel = () => {
     <a
       href='https://chatgpt-cooking-assistant.mss-rep.com'
       target='_blank'
-      className='md:hover:brightness-75 md:hover:bg-base-200 w-96'
+      className='md:hover:brightness-75 md:hover:bg-base-200 w-96 bg-base-300 rounded-lg'
     >
       <img src='/chatgpt-cooking-assistant.png' alt='' />
       <div className='p-4 flex flex-col gap-4'>
