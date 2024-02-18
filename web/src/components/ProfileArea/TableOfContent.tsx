@@ -18,7 +18,19 @@ export const TableOfContent = () => {
       </li>
       <li className='flex items-center gap-1'>
         <TbActivity />
+        <a href='#Qualifications'>Qualifications</a>
+      </li>
+      <li className='flex items-center gap-1'>
+        <TbActivity />
         <a href='#Activities'>Activities</a>
+      </li>
+      <li className='flex items-center gap-1'>
+        <TbActivity />
+        <a href='#TechnicalPortfolio'>TechnicalPortfolio</a>
+      </li>
+      <li className='flex items-center gap-1'>
+        <TbActivity />
+        <a href='#Contact'>Contact</a>
       </li>
     </ul>
   )
