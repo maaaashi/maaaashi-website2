@@ -1,5 +1,8 @@
+import { BsAwardFill } from 'react-icons/bs'
+import { FaPhotoVideo } from 'react-icons/fa'
 import { GiSkills } from 'react-icons/gi'
 import { TbActivity, TbArrowAutofitUp, TbHistoryToggle } from 'react-icons/tb'
+import { IoIosContact } from 'react-icons/io'
 
 export const TableOfContent = () => {
   return (
@@ -17,7 +20,7 @@ export const TableOfContent = () => {
         <a href='#Skill'>Skill</a>
       </li>
       <li className='flex items-center gap-1'>
-        <TbActivity />
+        <BsAwardFill />
         <a href='#Qualifications'>Qualifications</a>
       </li>
       <li className='flex items-center gap-1'>
@@ -25,11 +28,11 @@ export const TableOfContent = () => {
         <a href='#Activities'>Activities</a>
       </li>
       <li className='flex items-center gap-1'>
-        <TbActivity />
+        <FaPhotoVideo />
         <a href='#TechnicalPortfolio'>TechnicalPortfolio</a>
       </li>
       <li className='flex items-center gap-1'>
-        <TbActivity />
+        <IoIosContact />
         <a href='#Contact'>Contact</a>
       </li>
     </ul>
