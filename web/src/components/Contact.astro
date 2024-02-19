@@ -1,6 +1,8 @@
 ---
 import { FaXTwitter } from 'react-icons/fa6'
 import { AreaHeader } from './AreaHeader'
+import Qiita from '../components/Qiita.svelte'
+import { IoIosMail } from 'react-icons/io'
 ---
 
 <div class='flex flex-col gap-4' id='Contact'>
@@ -18,9 +20,15 @@ import { AreaHeader } from './AreaHeader'
         Maaaashi
       </span>
       <div class='flex justify-around w-full'>
-        <FaXTwitter />
-        <FaXTwitter />
-        <FaXTwitter />
+        <a href='https://qiita.com/maaaashi' target='_blank'>
+          <Qiita size={35} />
+        </a>
+        <a href='https://twitter.com/pg_maaaashi' target='_blank'>
+          <FaXTwitter size={35} />
+        </a>
+        <a href='mailto:ooka.ms.0r7e2p3@gmail.com'>
+          <IoIosMail size={35} />
+        </a>
       </div>
     </div>
   </div>
