@@ -1,4 +1,3 @@
-import { BsAwardFill } from 'react-icons/bs'
 import { FaPhotoVideo } from 'react-icons/fa'
 import { GiSkills } from 'react-icons/gi'
 import { TbActivity, TbArrowAutofitUp, TbHistoryToggle } from 'react-icons/tb'
@@ -17,11 +16,7 @@ export const TableOfContent = () => {
       </li>
       <li className='flex items-center gap-1'>
         <GiSkills />
-        <a href='#Skill'>Skill</a>
-      </li>
-      <li className='flex items-center gap-1'>
-        <BsAwardFill />
-        <a href='#Qualifications'>Qualifications</a>
+        <a href='#Ability'>Ability</a>
       </li>
       <li className='flex items-center gap-1'>
         <TbActivity />

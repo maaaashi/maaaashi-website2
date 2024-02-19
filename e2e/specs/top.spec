@@ -7,7 +7,7 @@
 * "EXPERIENCE"というボタンが表示されていること
 * "SKILL"というボタンが表示されていること
 * "EXPERIENCE - 経歴"という見出しが表示されていること
-* "Skill - スキル"という見出しが表示されていること
+* "Ability - 能力"という見出しが表示されていること
 * "Activities"という見出しが表示されていること
 
 ## TOPページの表示(PC)
@@ -18,8 +18,10 @@
 * "Mobile theme controller"というチェックボックスが表示されていないこと
 * href"#maaaashi-website"で、文字列"Top"のリンクが表示されていること
 * href"#Experience"で、文字列"Experience"のリンクが表示されていること
-* href"#Skill"で、文字列"Skill"のリンクが表示されていること
+* href"#Ability"で、文字列"Ability"のリンクが表示されていること
 * href"#Activities"で、文字列"Activities"のリンクが表示されていること
+* href"#TechnicalPortfolio"で、文字列"TechnicalPortfolio"のリンクが表示されていること
+* href"#Contact"で、文字列"Contact"のリンクが表示されていること
 
 ## TOPページの表示(スマホ)
 * ウィンドウサイズを変更(width: "375"px, height: "667"px)

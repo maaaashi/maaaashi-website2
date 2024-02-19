@@ -1,19 +1,27 @@
 ---
+import { FaAward } from 'react-icons/fa6'
+import { GrLanguage } from 'react-icons/gr'
 import { AreaHeader } from './AreaHeader'
+import { SectionHeader } from './SectionHeader'
 import { Skill as SkillComponent } from './Skill/index.tsx'
 import { Qualifications } from './Skill/Qualifications.tsx'
 ---
 
-<div id='Skill'>
-  <AreaHeader text='Skill - スキル' />
-  <div class='p-4 flex flex-col gap-4 bg-base-100'>
-    <SkillComponent />
-  </div>
-</div>
+<div id='Ability'>
+  <AreaHeader text='Ability - 能力' />
+  <div>
+    <section class='p-10 flex flex-col gap-4 bg-base-100'>
+      <SectionHeader>
+        <GrLanguage />Skills
+      </SectionHeader>
+      <SkillComponent />
+    </section>
 
-<div id='Qualifications'>
-  <AreaHeader text='Qualifications - 資格' />
-  <div class='p-4 flex flex-col gap-4 bg-base-100'>
-    <Qualifications client:load />
+    <section class='p-10 flex flex-col gap-4 bg-base-100'>
+      <SectionHeader>
+        <FaAward />Qualifications
+      </SectionHeader>
+      <Qualifications client:load />
+    </section>
   </div>
 </div>
