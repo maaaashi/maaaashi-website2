@@ -8,27 +8,31 @@ import { IoIosMail } from 'react-icons/io'
 <div class='flex flex-col gap-4' id='Contact'>
   <AreaHeader text='Contact' />
   <div class='bg-base-300 py-10 min-h-[500px] flex flex-col items-center'>
-    <div class='flex flex-col items-center'>
+    <div
+      class='flex flex-col md:flex-row items-center md:justify-around md:gap-10'
+    >
       <div class='avatar'>
         <div class='w-24 rounded-full'>
           <img src='/profile.JPG' alt='IMAGE' />
         </div>
       </div>
-      <span
-        class='mb-4 text-4xl md:text-5xl font-extrabold text-gray-400 dark:text-white text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400'
-      >
-        Maaaashi
-      </span>
-      <div class='flex justify-around w-full'>
-        <a href='https://qiita.com/maaaashi' target='_blank'>
-          <Qiita size={35} />
-        </a>
-        <a href='https://twitter.com/pg_maaaashi' target='_blank'>
-          <FaXTwitter size={35} />
-        </a>
-        <a href='mailto:ooka.ms.0r7e2p3@gmail.com'>
-          <IoIosMail size={35} />
-        </a>
+      <div class='flex flex-col'>
+        <span
+          class='mb-4 text-4xl md:text-5xl font-extrabold text-gray-400 dark:text-white text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400'
+        >
+          Maaaashi
+        </span>
+        <div class='flex justify-around w-full'>
+          <a href='https://qiita.com/maaaashi' target='_blank'>
+            <Qiita size={35} />
+          </a>
+          <a href='https://twitter.com/pg_maaaashi' target='_blank'>
+            <FaXTwitter size={35} />
+          </a>
+          <a href='mailto:ooka.ms.0r7e2p3@gmail.com'>
+            <IoIosMail size={35} />
+          </a>
+        </div>
       </div>
     </div>
   </div>
