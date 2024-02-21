@@ -1,11 +1,14 @@
 import type { APIRoute } from 'astro'
+import { prisma } from '../../libs/prisma'
 
 export const GET: APIRoute = async () => {
+  const aboutMe = await prisma.aboutMe.findFirst()
+
   return new Response(
     JSON.stringify({
       info: {
         aboutme: {
-          text: '<p>こんにちは！大岡正志と申します。</p><p>現在、株式会社ユーザベースでWebエンジニアをしています。</p><p>フロントエンド、バックエンド、インフラなど、幅広く開発を行っています。</p>',
+          text: aboutMe!.text,
         },
         experience: [
           {
