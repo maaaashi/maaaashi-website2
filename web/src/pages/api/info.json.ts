@@ -2,13 +2,24 @@ import type { APIRoute } from 'astro'
 import { prisma } from '../../libs/prisma'
 
 export const GET: APIRoute = async () => {
-  const aboutMe = await prisma.aboutMe.findFirst()
+  const data = await prisma.webSite.findMany({
+    where: {
+      OR: [
+        { key: 'aboutme' },
+        { key: 'experience' },
+        { key: 'skills' },
+        { key: 'qualifications' },
+      ],
+    },
+  })
+
+  const aboutMe = data.find((d) => d.key === 'aboutme')
 
   return new Response(
     JSON.stringify({
       info: {
         aboutme: {
-          text: aboutMe!.text,
+          text: aboutMe!.value,
         },
         experience: [
           {
