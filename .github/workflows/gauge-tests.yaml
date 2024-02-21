@@ -26,7 +26,7 @@ jobs:
           npm run test
         env:
           QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
-          QIITA_TOKEN: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
       - name: Deploy to Vercel
         if: success()
         uses: amondnet/vercel-action@v20
