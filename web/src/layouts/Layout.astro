@@ -8,13 +8,18 @@ interface Props {
 }
 
 const { title } = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const ogpImageURL = new URL('/ogp.png', Astro.url)
 ---
 
 <!doctype html>
 <html lang='ja' data-theme='light'>
   <head>
+    <link rel='canonical' href={canonicalURL} />
+    <meta property='og:image' content={ogpImageURL} />
     <meta charset='UTF-8' />
-    <meta name='description' content='Astro description' />
+    <meta name='description' content={"This is Maaaashi's Website"} />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
     <meta name='generator' content={Astro.generator} />
