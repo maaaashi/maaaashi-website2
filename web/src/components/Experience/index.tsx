@@ -18,8 +18,10 @@ export const Experience = () => {
     getExperience()
   }, [])
 
-  const formatDate = (date: string) =>
-    `${(new Date(date).getMonth() + 1).toString().padStart(2, '0')}, ${new Date(date).getFullYear()}`
+  const formatDate = (date: string) => {
+    const d = date ? new Date(date) : new Date()
+    return `${(d.getMonth() + 1).toString().padStart(2, '0')}, ${d.getFullYear()}`
+  }
 
   if (!experience)
     return (

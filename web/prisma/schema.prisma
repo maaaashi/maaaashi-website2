@@ -11,5 +11,5 @@ generator client {
 model WebSite {
   id    Int     @id @default(autoincrement())
   key   String
-  value String
+  value Json
 }

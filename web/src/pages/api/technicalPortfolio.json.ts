@@ -1,18 +1,16 @@
 import type { APIRoute } from 'astro'
+import { prisma } from '../../libs/prisma'
 
 export const GET: APIRoute = async () => {
+  const data = await prisma.webSite.findFirst({
+    where: {
+      OR: [{ key: 'technicalPortfolio' }],
+    },
+  })
+
   return new Response(
     JSON.stringify({
-      technicalPortfolio: [
-        {
-          name: "Maaaashi's Cooking Assistant",
-          url: 'https://maaaashi-cooking-assistant.mss-rep.com',
-          title: 'ChatGPTが料理のレシピとイメージ画像を生成',
-          description:
-            'ChatGPTを使って料理のレシピとイメージ画像を生成するアプリケーションです。',
-          imageUrl: '/chatgpt-cooking-assistant.png',
-        },
-      ],
+      technicalPortfolio: data!.value,
     }),
   )
 }

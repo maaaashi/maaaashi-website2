@@ -8,10 +8,12 @@ interface Props {
 
 export const Experience: FC<Props> = ({ experience }) => {
   const formatDate = (date: string) => {
-    return `${new Date(date).getFullYear()}年${(new Date(date).getMonth() + 1)
+    const d = date ? new Date(date) : new Date()
+    return `${d.getFullYear()}年${(d.getMonth() + 1)
       .toString()
       .padStart(2, '0')}月`
   }
+
   return (
     <div>
       <BoxTitle text={'経歴'} />
