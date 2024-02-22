@@ -1,22 +1,7 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-
-type Experience = {
-  date: string
-  topic: string
-  content: string
-}
+import { useExperienceUsecase } from '../../usecases/experienceUsecase'
 
 export const Experience = () => {
-  const getExperience = async () => {
-    const { data } = await axios.get('/api/experience.json')
-    setExperience(data.experience)
-  }
-  const [experience, setExperience] = useState<Experience[]>()
-
-  useEffect(() => {
-    getExperience()
-  }, [])
+  const experience = useExperienceUsecase()
 
   const formatDate = (date: string) => {
     const d = date ? new Date(date) : new Date()

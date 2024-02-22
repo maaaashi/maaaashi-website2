@@ -20,7 +20,10 @@ export const Experience: FC<Props> = ({ experience }) => {
       <BoxBody>
         {experience.map((exp, index) => {
           return (
-            <div className='flex flex-col' key={index}>
+            <div
+              className='flex flex-col md:flex-row md:justify-between'
+              key={index}
+            >
               <dt className='text-end w-fit self-start'>
                 <b>{formatDate(exp.date)}</b>
               </dt>

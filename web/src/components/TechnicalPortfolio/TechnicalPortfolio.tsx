@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
 import { Portfolio } from './Panel'
-import axios from 'axios'
+import { useTechnicalPortfolioUsecase } from '../../usecases/TechnicalPortfolioUsecase'
 
 type Portfolio = {
   name: string
@@ -11,15 +10,7 @@ type Portfolio = {
 }
 
 export const TechnicalPortfolio = () => {
-  const getPortfolio = async () => {
-    const { data } = await axios.get('/api/technicalPortfolio.json')
-    setPortfolio(data.technicalPortfolio)
-  }
-
-  const [portfolio, setPortfolio] = useState<Portfolio[]>()
-  useEffect(() => {
-    getPortfolio()
-  }, [])
+  const portfolio = useTechnicalPortfolioUsecase()
 
   if (!portfolio) return <>loading...</>
 

@@ -1,9 +1,8 @@
-import { useState, type ReactNode, useEffect } from 'react'
+import { useState, type ReactNode } from 'react'
 import { AboutMe } from './AboutMe'
 import { Experience } from './Experience'
 import { Skill } from './Skill'
 import { useInfoUsecase } from '../../../usecases/infoUsecase'
-import type { Info } from '../../../domains/Info'
 
 type Tab = {
   id: number
