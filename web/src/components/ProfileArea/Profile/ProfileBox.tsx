@@ -1,25 +1,9 @@
-import { useEffect, useState } from 'react'
 import { BoxTitle } from '../BoxTitle'
 import { ProfileItem } from './ProfileItem'
-import axios from 'axios'
-
-interface Profile {
-  name: string
-  age: string
-  job: string
-  email: string
-}
+import { useProfileUsecase } from '../../../usecases/profileUsecase'
 
 export const ProfileBox = () => {
-  const getProfile = async () => {
-    const { data } = await axios.get('/api/profile.json')
-    setProfile(data.profile)
-  }
-
-  const [profile, setProfile] = useState<Profile>()
-  useEffect(() => {
-    getProfile()
-  }, [])
+  const profile = useProfileUsecase()
 
   if (!profile) return <>loading...</>
 

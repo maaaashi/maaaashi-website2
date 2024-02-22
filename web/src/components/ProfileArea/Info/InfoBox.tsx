@@ -2,18 +2,8 @@ import { useState, type ReactNode, useEffect } from 'react'
 import { AboutMe } from './AboutMe'
 import { Experience } from './Experience'
 import { Skill } from './Skill'
-import axios from 'axios'
-
-interface Info {
-  info: {
-    aboutme: {
-      text: string
-    }
-    experience: { date: string; topic: string }[]
-    skills: { category: string; items: string[] }[]
-    qualifications: { date: string; topic: string }[]
-  }
-}
+import { useInfoUsecase } from '../../../usecases/infoUsecase'
+import type { Info } from '../../../domains/Info'
 
 type Tab = {
   id: number
@@ -22,47 +12,38 @@ type Tab = {
 }
 
 export const InfoBox = () => {
-  const getInfo = async () => {
-    const { data } = await axios.get<Info>('/api/info.json')
+  const [tabs, setTabs] = useState<Tab[]>([])
+  const [activeTab, setActiveTab] = useState<Tab>()
+  const [isLoading, setIsLoading] = useState(true)
 
+  useInfoUsecase((i) => {
     setTabs([
       {
         id: 0,
         title: 'ME',
-        component: <AboutMe aboutme={data.info.aboutme} />,
+        component: <AboutMe aboutme={i.aboutme} />,
       },
       {
         id: 1,
         title: 'EXPERIENCE',
-        component: <Experience experience={data.info.experience} />,
+        component: <Experience experience={i.experience} />,
       },
       {
         id: 2,
         title: 'SKILL',
         component: (
-          <Skill
-            skills={data.info.skills}
-            qualifications={data.info.qualifications}
-          />
+          <Skill skills={i.skills} qualifications={i.qualifications} />
         ),
       },
     ])
     setActiveTab({
       id: 0,
       title: 'ME',
-      component: <AboutMe aboutme={data.info.aboutme} />,
+      component: <AboutMe aboutme={i.aboutme} />,
     })
 
     setIsLoading(false)
-  }
-
-  const [tabs, setTabs] = useState<Tab[]>([])
-  const [activeTab, setActiveTab] = useState<Tab>()
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    getInfo()
-  }, [])
+  })
 
   if (isLoading) return <>loading...</>
 
