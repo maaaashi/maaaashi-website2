@@ -30,9 +30,7 @@ const ogpImageURL = new URL('/ogp.png', 'https://maaaashi-website2.mss-rep.com')
   </head>
   <body class='bg-base-50 h-screen overflow-hidden flex flex-col'>
     <Header client:load />
-    <div class='flex-1 overflow-y-auto'>
-      <slot />
-    </div>
+    <slot />
   </body>
 
   <style>
