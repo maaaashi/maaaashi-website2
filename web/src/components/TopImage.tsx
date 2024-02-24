@@ -1,6 +1,6 @@
 export const TopImage = () => {
   return (
-    <>
+    <div>
       <div className='fixed -z-10 top-16 left-1/2 -translate-x-1/2 w-max'>
         <img className='h-screen object-cover' src='/top_no_gazou.png' alt='' />
       </div>
@@ -13,6 +13,6 @@ export const TopImage = () => {
           .
         </span>
       </div>
-    </>
+    </div>
   )
 }
