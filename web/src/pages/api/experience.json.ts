@@ -1,16 +1,18 @@
 import type { APIRoute } from 'astro'
-import { prisma } from '../../libs/prisma'
+import { kv } from '@vercel/kv'
 
 export const GET: APIRoute = async () => {
-  const data = await prisma.webSite.findFirst({
-    where: {
-      OR: [{ key: 'experience' }],
-    },
-  })
-
+  process.env.KV_REST_API_URL = import.meta.env.KV_REST_API_URL
+  process.env.KV_REST_API_TOKEN = import.meta.env.KV_REST_API_TOKEN
+  console.log(process.env.KV_REST_API_URL)
+  console.log(import.meta.env.KV_REST_API_URL)
+  console.log(process.env.KV_REST_API_TOKEN)
+  console.log(import.meta.env.KV_REST_API_TOKEN)
+  const data = await kv.json.get('experience', '$')
   return new Response(
     JSON.stringify({
-      experience: data!.value,
+      experience: data[0].data,
     }),
   )
+  return new Response(JSON.stringify({}))
 }
