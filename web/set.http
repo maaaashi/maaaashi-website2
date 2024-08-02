@@ -1,0 +1,11 @@
+### POST
+POST https://maaaashi-website.mss-rep.com/api/set.json
+content-type: application/json
+
+{
+  "key": "technicalPortfolio",
+  "value": "hoge.com"
+}
+
+### GET
+GET https://maaaashi-website.mss-rep.com/api/technicalPortfolio.json
