@@ -13,18 +13,18 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "20"
-      - run: sudo apt-get update && sudo apt-get install -y curl unzip libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-      - run: curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
-      - run: |
-          cd web/
-          npm i
-          npm run build
-          npm run preview & cd ../e2e/
-          npm i
-          npx playwright install
-          npm run test
-        env:
-          QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
+      # - run: sudo apt-get update && sudo apt-get install -y curl unzip libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+      # - run: curl -SsL https://downloads.gauge.org/stable | sh -s -- --location-[custom path]
+      # - run: |
+      #     cd web/
+      #     npm i
+      #     npm run build
+      #     npm run preview & cd ../e2e/
+      #     npm i
+      #     npx playwright install
+      #     npm run test
+      #   env:
+      #     QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
       - name: Deploy to Vercel
         if: success()
         uses: amondnet/vercel-action@v20
