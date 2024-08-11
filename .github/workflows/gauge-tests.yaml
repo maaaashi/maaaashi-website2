@@ -20,9 +20,8 @@ jobs:
           npm i
           npm run build
           npm run preview & cd ../e2e/
-          cd ../e2e/
           npm i
-          npx playwright install 
+          npx playwright install
           npm run test
         env:
           QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
