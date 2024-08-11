@@ -1,12 +1,18 @@
 import type { APIRoute } from 'astro'
-import { kv } from '../../libs/kv'
 
 export const GET: APIRoute = async () => {
-  const technicalPortfolio = await kv.json.get('technicalPortfolio', '$')
-
   return new Response(
     JSON.stringify({
-      technicalPortfolio: technicalPortfolio[0].data,
+      technicalPortfolio: [
+        {
+          imageUrl: '/chatgpt-cooking-assistant.png',
+          name: "Maaaashi's Cooking Assistant",
+          title: 'ChatGPTが料理のレシピとイメージ画像を生成',
+          url: 'https://chatgpt-cooking-assistant.mss-rep.com/',
+          description:
+            'ChatGPTを使って料理のレシピとイメージ画像を生成するアプリケーションです。',
+        },
+      ],
     }),
   )
 }

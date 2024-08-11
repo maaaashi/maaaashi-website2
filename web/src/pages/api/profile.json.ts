@@ -1,11 +1,4 @@
 import type { APIRoute } from 'astro'
-import { kv } from '../../libs/kv'
-
-type Profile = {
-  name: string
-  job: string
-  email: string
-}
 
 export const GET: APIRoute = async () => {
   const myAge = Math.abs(
@@ -13,16 +6,14 @@ export const GET: APIRoute = async () => {
       new Date().getTime() - new Date('1996-07-23').getTime(),
     ).getUTCFullYear() - 1970,
   )
-  const profile = await kv.json.get('profile', '$')
-  const data = profile[0].data as Profile
 
   return new Response(
     JSON.stringify({
       profile: {
-        name: data.name,
+        name: '大岡 正志 / Masashi Ooka',
         age: myAge.toString(),
-        job: data.job,
-        email: data.email,
+        job: 'Web Developer',
+        email: 'ooka.ms.0r7e2p3@gmail.com',
       },
     }),
   )
