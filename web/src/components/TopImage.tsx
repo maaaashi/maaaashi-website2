@@ -1,7 +1,7 @@
 export const TopImage = () => {
   return (
     <div>
-      <div className='fixed -z-10 top-16 left-1/2 -translate-x-1/2 w-max'>
+      <div className='fixed -z-10 top-16 left-1/2 -translate-x-1/2 w-max scale-125'>
         <img className='h-screen object-cover' src='/top.webp' alt='' />
       </div>
       <div className='w-full h-screen relative'>
