@@ -1,18 +1,9 @@
 ---
 import { AreaHeader } from './AreaHeader'
-import { SectionHeader } from './SectionHeader'
+import { Ambition as AmbitionComponent } from './Ambition'
 ---
 
 <div id='Ambition'>
   <AreaHeader text='Ambition - 野望' />
-  <div>
-    <section class='p-10 flex flex-col gap-4 bg-base-100'>
-      <SectionHeader> 直近の野望 </SectionHeader>
-      <div class='text-lg font-black'>
-        アジャイル・XPの考え方を中心に、社内で最も挑戦的でクリエイティブなチームを作り上げたい
-      </div>
-      <SectionHeader> 野望 </SectionHeader>
-      <div class='text-lg font-black'>楽しく生きる</div>
-    </section>
-  </div>
+  <AmbitionComponent />
 </div>
